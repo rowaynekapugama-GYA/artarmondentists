@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, follow">
+<title>Children's Orthodontics Artarmon — A Head Start on a Winning Smile | Artarmon Dentists</title>
+<meta name="description" content="Early (interceptive) orthodontics for children in Artarmon with Dr Radhika Bhatla. Gentle assessment to guide your child's teeth and jaw — payment plans available. $50 consultation fee applies.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23141416'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='19' font-weight='bold' text-anchor='middle' fill='white'%3EA%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#131315">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Children's Orthodontics Artarmon — A Head Start on a Winning Smile">
+<meta property="og:description" content="Early orthodontics for children in Artarmon with Dr Radhika Bhatla. Gentle assessment, payment plans available. $50 consultation fee applies.">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Fonts: Fraunces (display serif) + Plus Jakarta Sans (UI / body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================================
+   ARTARMON DENTISTS — Children's Orthodontics · Liquid Glass Landing Page
+   Single file. Desktop = vertical scroll. Mobile = horizontal swipe deck.
+   ========================================================================= */
+
+:root{
+  /* Brand palette (Artarmon Dentists — monochrome: charcoal / white / grey) */
+  --ink:        #0a0a0b;   /* near-black */
+  --navy-900:   #131315;   /* deep charcoal base */
+  --navy-800:   #1c1c1f;
+  --steel:      #f5f5f6;   /* PRIMARY → near-white (buttons) */
+  --steel-deep: #e2e2e4;
+  --steel-lite: #8d8d94;   /* mid grey (ambient) */
+  --aqua:       #f5f5f6;   /* accent / checkmarks / focus / glass edge glow */
+  --warm:       #f5f5f6;   /* (stage numbers styled separately) */
+  --mist:       #b6b6bc;   /* light grey text */
+  --mist-dim:   #8a8a91;
+  --cloud:      #f4f4f5;   /* near white (main text) */
+  --cream:      #fafafa;   /* white (form surface) */
+
+  /* Glass */
+  --glass:        rgba(255,255,255,.07);
+  --glass-2:      rgba(255,255,255,.045);
+  --glass-edge:   rgba(255,255,255,.18);
+  --glass-edge-2: rgba(255,255,255,.30);
+  --glass-blur:   blur(22px) saturate(135%);
+  --r:   24px;    /* radius */
+  --r-s: 16px;
+  --r-l: 32px;
+
+  /* Layout */
+  --bar-h: 68px;
+  --dock-h: 84px;
+  --maxw: 1200px;
+
+  --shadow-soft: 0 18px 50px -20px rgba(0,0,0,.55);
+  --shadow-card: 0 22px 60px -24px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.22);
+
+  --ease: cubic-bezier(.16,.84,.34,1);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:"Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  color:var(--cloud);
+  background:var(--navy-900);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+button{ font-family:inherit; cursor:pointer; }
+a{ color:inherit; }
+:focus-visible{ outline:2px solid var(--aqua); outline-offset:3px; border-radius:6px; }
+
+/* ---------- Ambient liquid-glass background ---------- */
+.bg{ position:fixed; inset:0; z-index:-2; overflow:hidden;
+  background:
+    radial-gradient(120% 100% at 80% -10%, #202024 0%, transparent 55%),
+    radial-gradient(120% 120% at -10% 110%, #1a1a1e 0%, transparent 50%),
+    linear-gradient(160deg, var(--ink) 0%, var(--navy-900) 45%, var(--navy-800) 100%);
+}
+.orb{ position:absolute; border-radius:50%; filter:blur(80px); opacity:.26; will-change:transform; }
+.orb.a{ width:46vmax; height:46vmax; top:-14vmax; right:-10vmax;
+  background:radial-gradient(circle at 30% 30%, var(--steel-lite), transparent 65%); animation:drift1 26s var(--ease) infinite alternate; }
+.orb.b{ width:40vmax; height:40vmax; bottom:-14vmax; left:-12vmax;
+  background:radial-gradient(circle at 60% 40%, var(--steel-lite), transparent 62%); opacity:.16; animation:drift2 32s var(--ease) infinite alternate; }
+.orb.c{ width:30vmax; height:30vmax; top:35%; left:48%;
+  background:radial-gradient(circle at 50% 50%, var(--mist-dim), transparent 60%); opacity:.12; animation:drift3 38s var(--ease) infinite alternate; }
+@keyframes drift1{ to{ transform:translate3d(-6vmax,5vmax,0) scale(1.1);} }
+@keyframes drift2{ to{ transform:translate3d(7vmax,-4vmax,0) scale(1.12);} }
+@keyframes drift3{ to{ transform:translate3d(-5vmax,-6vmax,0) scale(.92);} }
+/* grain */
+.bg::after{ content:""; position:absolute; inset:0; opacity:.05; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* ---------- Hero background photo ---------- */
+#hero{ position:relative; isolation:isolate; }
+.hero-photo{ position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:url("hero.webp") center center / cover no-repeat; }
+.hero-veil{ position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    linear-gradient(100deg, rgba(17,17,19,.95) 0%, rgba(17,17,19,.82) 32%, rgba(17,17,19,.5) 60%, rgba(17,17,19,.72) 100%),
+    linear-gradient(180deg, rgba(17,17,19,.5) 0%, transparent 20%, transparent 64%, rgba(17,17,19,.74) 100%); }
+#hero .panel-inner{ position:relative; z-index:2; }
+@media (max-width:880px){
+  .hero-veil{ background:linear-gradient(180deg, rgba(17,17,19,.8) 0%, rgba(17,17,19,.68) 42%, rgba(17,17,19,.93) 100%); }
+}
+
+/* ---------- Glass utility ---------- */
+.glass{
+  position:relative;
+  background:linear-gradient(155deg, var(--glass) 0%, var(--glass-2) 100%);
+  -webkit-backdrop-filter:var(--glass-blur);
+  backdrop-filter:var(--glass-blur);
+  border:1px solid var(--glass-edge);
+  border-radius:var(--r);
+  box-shadow:var(--shadow-card);
+}
+.glass::before{ /* specular sheen on top edge */
+  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,255,255,.16), transparent 26%);
+  -webkit-mask:linear-gradient(#fff 0 0); mask:linear-gradient(#fff 0 0);
+}
+
+/* ---------- Buttons ---------- */
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.55em;
+  font-weight:600; font-size:.98rem; letter-spacing:.01em; line-height:1;
+  padding:.95em 1.5em; border-radius:999px; border:1px solid transparent;
+  text-decoration:none; transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s; white-space:nowrap; }
+.btn svg{ width:1.05em; height:1.05em; }
+.btn-primary{ color:#141416;
+  background:linear-gradient(180deg, #ffffff, #ededee);
+  box-shadow:0 12px 28px -10px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.6), inset 0 -1px 0 rgba(0,0,0,.06);
+  border-color:rgba(0,0,0,.06); }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 36px -12px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.7); }
+.btn-ghost{ color:var(--cloud); background:var(--glass); -webkit-backdrop-filter:var(--glass-blur); backdrop-filter:var(--glass-blur); border:1px solid var(--glass-edge); }
+.btn-ghost:hover{ transform:translateY(-2px); border-color:var(--glass-edge-2); background:rgba(255,255,255,.12); }
+.btn-block{ width:100%; }
+.btn-lg{ padding:1.1em 1.8em; font-size:1.05rem; }
+
+/* ---------- Persistent top bar ---------- */
+.topbar{ position:fixed; top:0; left:0; right:0; height:var(--bar-h); z-index:60;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding:0 clamp(16px,4vw,40px);
+  background:linear-gradient(180deg, rgba(10,22,38,.72), rgba(10,22,38,.32));
+  -webkit-backdrop-filter:blur(18px) saturate(140%); backdrop-filter:blur(18px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,.08); }
+.brand{ display:flex; flex-direction:column; line-height:1.1; text-decoration:none; }
+.brand b{ font-family:"Fraunces", serif; font-weight:600; font-size:1.08rem; letter-spacing:.01em; color:#fff; }
+.brand span{ font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(--mist-dim); margin-top:3px; }
+.topbar .btn{ padding:.72em 1.25em; font-size:.9rem; }
+
+/* ---------- Deck / panels ---------- */
+.deck{ position:relative; }
+.panel{ position:relative; padding:calc(var(--bar-h) + clamp(28px,6vh,72px)) clamp(20px,5vw,48px) clamp(48px,8vh,90px);
+  min-height:100svh; display:flex; align-items:center; }
+.panel-inner{ width:100%; max-width:var(--maxw); margin:0 auto; }
+
+/* ---------- Section header ---------- */
+.eyebrow{ display:inline-flex; align-items:center; gap:.6em; font-size:.7rem; font-weight:600;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--aqua); margin:0 0 1rem; }
+.eyebrow::before{ content:""; width:26px; height:1px; background:linear-gradient(90deg,var(--aqua),transparent); }
+h1,h2,h3{ font-family:"Fraunces", serif; font-weight:500; line-height:1.04; margin:0; letter-spacing:-.01em; }
+h2.title{ font-size:clamp(2rem,5vw,3.4rem); color:#fff; max-width:16ch; }
+.lede{ color:var(--mist); font-size:clamp(1rem,1.6vw,1.18rem); max-width:54ch; margin:1.1rem 0 0; }
+.title em{ font-style:italic; color:var(--aqua); }
+
+/* ---------- HERO ---------- */
+#hero .panel-inner{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(28px,4vw,64px); align-items:center; }
+.hero-copy h1{ font-size:clamp(2.7rem,6.2vw,5.1rem); color:#fff; margin:.4rem 0 0; }
+.hero-copy h1 .pop{ display:block; position:relative; }
+.hero-copy h1 .pop em{ font-style:italic; color:var(--aqua); }
+.hero-sub{ color:var(--mist); font-size:clamp(1.02rem,1.6vw,1.2rem); max-width:46ch; margin:1.3rem 0 0; }
+.hero-sub b{ color:var(--cloud); font-weight:600; }
+
+.pay-chip{ display:flex; gap:.95rem; align-items:flex-start; padding:1rem 1.2rem; margin:1.6rem 0 0; border-radius:var(--r-s); }
+.pay-chip .ico{ flex:0 0 auto; width:42px; height:42px; border-radius:12px; display:grid; place-items:center;
+  background:linear-gradient(180deg,var(--steel-lite),var(--steel-deep)); box-shadow:inset 0 1px 0 rgba(255,255,255,.4); color:#fff; }
+.pay-chip .ico svg{ width:20px; height:20px; }
+.pay-chip b{ display:block; color:#fff; font-weight:600; font-size:1rem; }
+.pay-chip p{ margin:.2rem 0 0; color:var(--mist); font-size:.9rem; line-height:1.45; }
+
+.trust{ display:flex; flex-wrap:wrap; gap:.6rem 1.4rem; margin:1.7rem 0 0; padding:0; list-style:none; }
+.trust li{ display:flex; align-items:center; gap:.5rem; font-size:.92rem; color:var(--cloud); font-weight:500; }
+.check{ flex:0 0 auto; width:20px; height:20px; border-radius:50%; display:grid; place-items:center;
+  background:rgba(161,161,170,.16); border:1px solid rgba(161,161,170,.5); color:var(--aqua); }
+.check svg{ width:11px; height:11px; }
+
+.hero-cta{ display:flex; flex-wrap:wrap; gap:.8rem; margin:2rem 0 0; }
+
+.scroll-hint{ display:inline-flex; align-items:center; gap:.5rem; margin-top:1.8rem; color:var(--mist-dim); font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; }
+.scroll-hint .dot{ width:7px; height:7px; border-radius:50%; background:var(--aqua); animation:pulse 1.8s ease infinite; }
+.hint-desktop{ display:inline; } .hint-mobile{ display:none; }
+@keyframes pulse{ 0%,100%{ opacity:.4; transform:scale(.8);} 50%{ opacity:1; transform:scale(1.3);} }
+
+/* ---------- Lead form (liquid glass) ---------- */
+.form-card{ overflow:hidden; }
+.form-head{ padding:1.5rem 1.6rem 1.3rem; background:linear-gradient(160deg, var(--ink), #18181b);
+  border-bottom:1px solid rgba(255,255,255,.07); }
+.form-title{ font-size:1.45rem; color:#fff; }
+.form-sub{ margin:.4rem 0 0; color:var(--mist); font-size:.9rem; }
+.form-body{ padding:1.4rem 1.6rem 1.6rem; }
+fieldset.q{ border:0; margin:0 0 1.15rem; padding:0; }
+fieldset.q legend{ font-size:.86rem; font-weight:600; color:var(--cloud); margin-bottom:.6rem; padding:0; }
+.req{ color:var(--aqua); }
+.opts{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.opt{ flex:1 1 auto; text-align:left; padding:.7em .9em; border-radius:12px; font-size:.86rem; color:var(--mist);
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); transition:.18s var(--ease); position:relative; }
+.opt:hover{ border-color:rgba(255,255,255,.3); color:var(--cloud); }
+.opt.is-selected{ color:#fff; border-color:var(--aqua); background:rgba(161,161,170,.16);
+  box-shadow:0 0 0 3px rgba(161,161,170,.14), inset 0 1px 0 rgba(255,255,255,.2); }
+.opt.is-selected::after{ content:"✓"; margin-left:.45em; color:var(--aqua); font-weight:700; }
+.field{ display:block; margin:0 0 1rem; }
+.field-label{ display:block; font-size:.86rem; font-weight:600; color:var(--cloud); margin-bottom:.45rem; }
+.field input{ width:100%; padding:.85em 1em; border-radius:12px; font-size:1rem; color:#fff;
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.16); transition:.18s; }
+.field input::placeholder{ color:var(--mist-dim); }
+.field input:focus{ outline:none; border-color:var(--aqua); background:rgba(255,255,255,.08); box-shadow:0 0 0 3px rgba(161,161,170,.16); }
+.field.err input{ border-color:#e0857d; box-shadow:0 0 0 3px rgba(224,133,125,.18); }
+.err-msg{ display:none; color:#f0a7a0; font-size:.78rem; margin-top:.35rem; }
+.q.err .err-msg, .field.err .err-msg{ display:block; }
+.hp{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+.submit-btn{ margin-top:.4rem; }
+.form-foot{ margin:.9rem 0 0; font-size:.76rem; color:var(--mist-dim); text-align:center; line-height:1.5; }
+.form-success{ padding:2.4rem 1.7rem; text-align:center; }
+.form-success .sx{ width:62px; height:62px; margin:0 auto 1rem; border-radius:50%; display:grid; place-items:center;
+  background:rgba(161,161,170,.16); border:1px solid rgba(161,161,170,.5); color:var(--aqua); }
+.form-success .sx svg{ width:28px; height:28px; }
+.form-success h3{ font-size:1.5rem; color:#fff; }
+.form-success p{ color:var(--mist); margin:.6rem 0 0; font-size:.95rem; }
+.field-row{ display:grid; grid-template-columns:1fr 1fr; gap:.7rem; }
+@media (max-width:400px){ .field-row{ grid-template-columns:1fr; gap:0; } }
+
+/* ---------- Thank-you panel (revealed only after the form is submitted) ---------- */
+#thanks{ display:none; }
+body.lead-submitted #thanks{ display:flex; }
+.thanks-card{ max-width:640px; margin:0 auto; text-align:center; padding:clamp(2rem,5vw,3.2rem); }
+.thanks-badge{ width:78px; height:78px; margin:0 auto 1.5rem; border-radius:50%; display:grid; place-items:center;
+  background:radial-gradient(circle at 30% 25%, var(--steel-lite), var(--steel-deep)); color:#fff;
+  box-shadow:0 16px 44px rgba(63,63,70,.5), inset 0 1px 0 rgba(255,255,255,.45); }
+.thanks-badge svg{ width:36px; height:36px; }
+.thanks-card h2{ font-size:clamp(1.9rem,5vw,3rem); color:#fff; }
+.thanks-card .lede{ margin:1rem auto 0; }
+.next-steps{ list-style:none; margin:1.9rem auto 0; padding:0; max-width:460px; text-align:left; display:grid; gap:.8rem; }
+.next-steps li{ display:flex; gap:.75rem; align-items:flex-start; color:var(--mist); font-size:.94rem; line-height:1.5; }
+.next-steps .num{ flex:0 0 auto; width:25px; height:25px; border-radius:50%; display:grid; place-items:center; margin-top:.05rem;
+  background:rgba(161,161,170,.16); border:1px solid rgba(161,161,170,.5); color:var(--aqua); font-size:.78rem; font-weight:700; }
+.thanks-call{ margin-top:2rem; justify-content:center; }
+.thanks-call a{ font-size:1.15rem; }
+
+/* ---------- Ticks list (reusable) ---------- */
+.ticks{ list-style:none; padding:0; margin:1.4rem 0 0; display:grid; gap:.7rem; }
+.ticks li{ display:flex; gap:.7rem; align-items:flex-start; color:var(--cloud); font-size:.98rem; }
+.ticks .check{ margin-top:2px; }
+
+/* ---------- Two-column media section ---------- */
+.media-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,60px); align-items:center; }
+.frame{ padding:14px; border-radius:var(--r-l); }
+.frame img{ border-radius:calc(var(--r-l) - 12px); width:100%; height:auto; }
+.frame .cap{ display:block; text-align:center; font-size:.78rem; color:var(--mist-dim); margin-top:.7rem; letter-spacing:.04em; }
+
+/* ---------- Before & After ---------- */
+.ba-gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; margin-top:2rem; align-items:start; }
+.ba-item{ position:relative; margin:0; padding:8px; border-radius:var(--r); overflow:hidden; }
+.ba-item img{ display:block; width:100%; height:auto; border-radius:var(--r-s); }
+.ba-tag{ position:absolute; top:18px; font-size:.62rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  padding:.3em .7em; border-radius:999px; background:rgba(10,22,38,.62); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+  color:#fff; border:1px solid rgba(255,255,255,.22); z-index:2; }
+.ba-tag-before{ left:18px; }
+.ba-tag-after{ right:18px; }
+@media (max-width:880px){ .ba-gallery{ grid-template-columns:1fr; } }
+.disclaimer{ margin-top:1.6rem; font-size:.78rem; color:var(--mist-dim); line-height:1.6; max-width:80ch; }
+
+/* ---------- Section imagery + map ---------- */
+.dentist-photo{ display:block; width:100%; height:300px; object-fit:cover; object-position:center 20%; border-radius:var(--r-s); margin-bottom:1.3rem; }
+.section-banner{ display:block; width:100%; height:340px; object-fit:cover; border-radius:var(--r); margin-top:2rem; box-shadow:0 18px 50px rgba(0,0,0,.3); }
+.map-embed{ display:block; width:100%; height:240px; border:0; border-radius:var(--r-s); margin-top:1rem; background:var(--navy-800); }
+@media (max-width:880px){
+  .dentist-photo{ height:260px; }
+  .section-banner{ height:220px; margin-top:1.6rem; }
+}
+
+/* ---------- Video ---------- */
+.video-wrap{ position:relative; margin-top:2rem; padding:14px; border-radius:var(--r-l); }
+.video-shell{ position:relative; border-radius:calc(var(--r-l) - 12px); overflow:hidden; aspect-ratio:16/9; background:#000; }
+.video-shell video{ width:100%; height:100%; object-fit:cover; display:block; }
+.video-poster{ position:absolute; inset:0; background-size:cover; background-position:center; display:grid; place-items:center;
+  cursor:pointer; transition:opacity .4s; }
+.video-poster::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(10,22,38,.15),rgba(10,22,38,.55)); }
+.play-btn{ position:relative; width:84px; height:84px; border-radius:50%; border:1px solid rgba(255,255,255,.5);
+  background:rgba(255,255,255,.14); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); display:grid; place-items:center;
+  box-shadow:0 12px 40px rgba(0,0,0,.5); transition:transform .25s var(--ease); }
+.video-poster:hover .play-btn{ transform:scale(1.08); }
+.play-btn svg{ width:30px; height:30px; fill:#fff; margin-left:4px; }
+.is-playing .video-poster{ opacity:0; pointer-events:none; }
+
+/* ---------- Card grids (treatments / funding / journey) ---------- */
+.cards{ display:grid; gap:1.2rem; margin-top:2rem; }
+.cards.two{ grid-template-columns:1fr 1fr; }
+.cards.three{ grid-template-columns:repeat(3,1fr); }
+.card{ padding:1.6rem 1.5rem; border-radius:var(--r); }
+.card .num{ font-family:"Fraunces",serif; font-size:1.05rem; color:var(--aqua); }
+.card h3{ font-size:1.45rem; color:#fff; margin:.3rem 0 .6rem; }
+.card p{ color:var(--mist); font-size:.95rem; margin:0; }
+.card .ticks{ margin-top:1.1rem; }
+.card .ticks li{ font-size:.9rem; }
+.badge{ position:absolute; top:1.2rem; right:1.2rem; font-size:.66rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  padding:.34em .75em; border-radius:999px; color:var(--ink); background:linear-gradient(180deg,var(--aqua),var(--steel-lite)); }
+/* duration/label badge that sits ABOVE the card title — avoids overlap with long titles */
+.badge.flow{ position:static; display:inline-block; margin:0 0 .8rem; top:auto; right:auto; }
+/* Instagram reels (social proof) */
+.reels{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2rem; justify-items:center; align-items:start; }
+.reels .instagram-media{ margin:0 auto !important; }
+@media (max-width:880px){ .reels{ grid-template-columns:1fr; } }
+/* embedded practice video (Vimeo) */
+.video-embed{ position:relative; width:100%; margin:2.2rem 0 0; aspect-ratio:16/9;
+  border-radius:var(--r); overflow:hidden; border:1px solid rgba(255,255,255,.1); box-shadow:0 30px 80px rgba(0,0,0,.5); background:#000; }
+.video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+/* hero Google-reviews badge */
+.reviews{ display:flex; align-items:center; gap:.7rem; margin-top:1.9rem; flex-wrap:wrap; }
+.reviews .stars{ color:#f0c24c; font-size:1.35rem; letter-spacing:.12em; line-height:1; white-space:nowrap; }
+.reviews .reviews-text{ color:var(--mist); font-size:1rem; }
+.reviews .reviews-text strong{ color:#fff; font-weight:700; }
+.note-chip{ margin-top:1.6rem; padding:1.2rem 1.4rem; border-radius:var(--r-s); display:flex; gap:1rem; align-items:flex-start; }
+.note-chip .ico{ flex:0 0 auto; width:40px; height:40px; border-radius:11px; display:grid; place-items:center;
+  background:rgba(161,161,170,.16); border:1px solid rgba(161,161,170,.4); color:var(--aqua); }
+.note-chip b{ color:#fff; display:block; margin-bottom:.2rem; }
+.note-chip p{ color:var(--mist); font-size:.9rem; margin:0; }
+
+/* ---------- Steps (journey) ---------- */
+.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.1rem; margin-top:2rem; counter-reset:step; }
+.step{ padding:1.5rem 1.3rem; border-radius:var(--r); position:relative; }
+.step .sn{ width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-family:"Fraunces",serif; font-size:1.15rem;
+  color:#fff; background:linear-gradient(180deg,var(--steel-lite),var(--steel-deep)); box-shadow:inset 0 1px 0 rgba(255,255,255,.35); margin-bottom:.9rem; }
+.step h3{ font-size:1.15rem; color:#fff; margin-bottom:.4rem; }
+.step p{ color:var(--mist); font-size:.88rem; margin:0; }
+
+/* ---------- Dentist ---------- */
+.dentist-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(28px,4vw,56px); align-items:center; }
+.dentist-card{ padding:1.8rem; border-radius:var(--r-l); }
+.dentist-card .role{ color:var(--aqua); font-size:.92rem; font-weight:600; margin:.2rem 0 1.2rem; }
+.dentist-card .creds{ list-style:none; padding:0; margin:1.4rem 0 0; display:flex; flex-wrap:wrap; gap:.6rem; }
+.dentist-card .creds li{ font-size:.82rem; color:var(--cloud); padding:.5em .9em; border-radius:999px;
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); }
+.mini-trust{ display:grid; gap:1.1rem; }
+.mini-trust .mt{ display:flex; gap:.9rem; align-items:flex-start; }
+.mini-trust .mt .ico{ flex:0 0 auto; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; color:var(--aqua);
+  background:rgba(161,161,170,.14); border:1px solid rgba(161,161,170,.4); }
+.mini-trust b{ color:#fff; display:block; font-size:1rem; }
+.mini-trust p{ color:var(--mist); font-size:.88rem; margin:.15rem 0 0; }
+
+/* ---------- FAQ ---------- */
+.faq{ margin-top:2rem; display:grid; gap:.8rem; max-width:880px; }
+.faq-item{ border-radius:var(--r-s); overflow:hidden; }
+.faq-q{ width:100%; text-align:left; background:transparent; border:0; color:#fff; padding:1.15rem 1.3rem;
+  font-size:1.05rem; font-weight:600; font-family:"Fraunces",serif; display:flex; justify-content:space-between; gap:1rem; align-items:center; }
+.faq-q .pm{ flex:0 0 auto; width:26px; height:26px; border-radius:50%; border:1px solid var(--glass-edge); display:grid; place-items:center;
+  color:var(--aqua); transition:transform .3s var(--ease); font-size:1.1rem; }
+.faq-item.open .faq-q .pm{ transform:rotate(45deg); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .35s var(--ease); }
+.faq-a p{ padding:0 1.3rem 1.2rem; margin:0; color:var(--mist); font-size:.94rem; }
+
+/* ---------- Book panel ---------- */
+#book .panel-inner{ display:grid; grid-template-columns:1fr; gap:clamp(28px,4vw,56px); }
+.book-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(28px,4vw,56px); align-items:center; }
+.book-points{ list-style:none; padding:0; margin:1.5rem 0 0; display:grid; gap:.9rem; }
+.book-points li{ display:flex; gap:.75rem; align-items:center; color:var(--cloud); font-size:1.02rem; }
+.book-call{ margin-top:1.8rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.book-call a{ font-family:"Fraunces",serif; font-size:1.6rem; color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; }
+.book-call a svg{ width:1.1em; height:1.1em; color:var(--aqua); }
+.book-cta-wrap{ display:none; } /* desktop final CTA (mobile uses the form panel) */
+
+/* ---------- Footer ---------- */
+.footer{ padding:clamp(40px,6vh,72px) clamp(20px,5vw,48px) 3rem; border-top:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg, transparent, rgba(10,22,38,.6)); }
+.footer-inner{ max-width:var(--maxw); margin:0 auto; }
+.footer-top{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; align-items:flex-start; }
+.footer-brand b{ font-family:"Fraunces",serif; font-size:1.3rem; color:#fff; display:block; }
+.footer-brand span{ color:var(--mist-dim); font-size:.85rem; letter-spacing:.04em; }
+.footer-contact{ color:var(--mist); font-size:.95rem; }
+.footer-contact a{ color:#fff; text-decoration:none; font-weight:600; }
+.legal{ margin-top:2.4rem; padding-top:2rem; border-top:1px solid rgba(255,255,255,.07); }
+.legal p{ font-size:.76rem; color:var(--mist-dim); line-height:1.65; margin:0 0 .8rem; max-width:100ch; }
+.legal .reg{ color:var(--mist); }
+.copy{ margin-top:1.6rem; font-size:.78rem; color:var(--mist-dim); }
+.copy a{ color:var(--mist); }
+
+/* ---------- Desktop side nav (vertical progress) ---------- */
+.sidenav{ position:fixed; right:22px; top:50%; transform:translateY(-50%); z-index:40; display:flex; flex-direction:column; gap:.7rem; }
+.sidenav button{ width:11px; height:11px; padding:0; border-radius:50%; border:1px solid rgba(255,255,255,.35); background:transparent; transition:.25s var(--ease); position:relative; }
+.sidenav button:hover{ background:rgba(255,255,255,.4); }
+.sidenav button.active{ background:var(--aqua); border-color:var(--aqua); box-shadow:0 0 0 5px rgba(161,161,170,.18); }
+.sidenav button .lbl{ position:absolute; right:22px; top:50%; transform:translateY(-50%); white-space:nowrap; font-size:.72rem;
+  padding:.35em .7em; border-radius:8px; background:rgba(10,22,38,.85); color:#fff; opacity:0; pointer-events:none; transition:.2s; border:1px solid rgba(255,255,255,.12); }
+.sidenav button:hover .lbl{ opacity:1; }
+
+/* ---------- Mobile dock (hidden on desktop) ---------- */
+.dock{ display:none; }
+
+/* ============================ MOBILE ============================ */
+@media (max-width:880px){
+  body{ height:100svh; overflow:hidden; }
+  .hint-desktop{ display:none; } .hint-mobile{ display:inline; }
+  .sidenav{ display:none; }
+
+  .deck{ height:100svh; display:flex; flex-direction:row; flex-wrap:nowrap;
+    overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+    scrollbar-width:none; }
+  .deck::-webkit-scrollbar{ display:none; }
+
+  .panel{ flex:0 0 100vw; width:100vw; height:100svh; min-height:0; overflow-y:auto; overscroll-behavior:contain;
+    scroll-snap-align:start; scroll-snap-stop:always; align-items:flex-start;
+    padding:calc(var(--bar-h) + 18px) 22px calc(var(--dock-h) + 18px); -webkit-overflow-scrolling:touch; }
+  .deck::-webkit-scrollbar, .panel::-webkit-scrollbar{ display:none; }
+  .panel-inner{ min-height:min-content; }
+
+  /* stack all multi-column layouts */
+  #hero .panel-inner, .media-grid, .dentist-grid, .book-grid{ grid-template-columns:1fr; gap:1.8rem; }
+  .cards.two, .cards.three, .ba-grid, .steps{ grid-template-columns:1fr; }
+  .steps{ gap:.9rem; }
+
+  .hero-copy h1{ font-size:clamp(2.5rem,11vw,3.4rem); }
+  h2.title{ font-size:clamp(1.85rem,8vw,2.6rem); }
+  .hero-cta{ flex-direction:column; }
+  .hero-cta .btn{ width:100%; }
+
+  /* On mobile the form lives only in the Book panel */
+  .hero-form-wrap{ display:none; }
+  .book-form-wrap{ display:block; }
+  .book-cta-wrap{ display:none; }
+
+  /* reveal disabled (panels animate in via active state instead) */
+  .reveal{ opacity:1 !important; transform:none !important; }
+
+  .footer{ display:none; } /* legal shown inside the Book panel on mobile */
+  .legal-mobile{ display:block; }
+
+  /* Bottom dock */
+  .dock{ display:flex; position:fixed; left:0; right:0; bottom:0; height:var(--dock-h); z-index:55;
+    align-items:center; justify-content:space-between; gap:.8rem; padding:0 16px calc(env(safe-area-inset-bottom));
+    background:linear-gradient(0deg, rgba(10,22,38,.85), rgba(10,22,38,.4));
+    -webkit-backdrop-filter:blur(18px) saturate(140%); backdrop-filter:blur(18px) saturate(140%);
+    border-top:1px solid rgba(255,255,255,.1); }
+  .dock-arrow{ width:46px; height:46px; flex:0 0 auto; border-radius:50%; border:1px solid var(--glass-edge);
+    background:var(--glass); color:#fff; display:grid; place-items:center; transition:.2s; }
+  .dock-arrow:disabled{ opacity:.3; }
+  .dock-arrow svg{ width:18px; height:18px; }
+  .dock-center{ flex:1 1 auto; text-align:center; min-width:0; }
+  .dock-label{ font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--aqua); font-weight:600; }
+  .dock-dots{ display:flex; justify-content:center; gap:6px; margin-top:7px; }
+  .dock-dots button{ width:7px; height:7px; padding:0; border-radius:50%; border:0; background:rgba(255,255,255,.28); transition:.2s; }
+  .dock-dots button.active{ background:var(--aqua); width:20px; border-radius:4px; }
+}
+@media (min-width:881px){ .legal-mobile{ display:none; } }
+
+/* tablet tweak */
+@media (max-width:1080px) and (min-width:881px){
+  .cards.three, .ba-grid, .steps{ grid-template-columns:repeat(2,1fr); }
+}
+
+/* ---------- Reveal animation (desktop) ---------- */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.in{ opacity:1; transform:none; }
+.reveal.d1{ transition-delay:.08s; } .reveal.d2{ transition-delay:.16s; }
+.reveal.d3{ transition-delay:.24s; } .reveal.d4{ transition-delay:.32s; }
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  .orb{ animation:none; }
+  .reveal{ opacity:1; transform:none; transition:none; }
+  .scroll-hint .dot{ animation:none; }
+}
+/* A/B test variant switcher */
+.ab-switch{ position:fixed; left:16px; bottom:18px; z-index:58; display:inline-flex; align-items:center; gap:.4em;
+  padding:.6em 1.05em; border-radius:999px; font-size:.78rem; font-weight:600; letter-spacing:.01em;
+  background:rgba(10,22,38,.82); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); color:var(--cloud);
+  border:1px solid rgba(161,161,170,.4); text-decoration:none; box-shadow:0 10px 34px rgba(0,0,0,.45);
+  transition:transform .2s var(--ease), border-color .2s, background .2s; }
+.ab-switch:hover{ transform:translateY(-2px); border-color:var(--aqua); background:rgba(38,41,32,.92); }
+@media (max-width:880px){ .ab-switch{ bottom:calc(var(--dock-h) + 12px); left:12px; padding:.5em .85em; font-size:.72rem; } }
+/* ---------- Artarmon: problems-to-watch grid ---------- */
+.prob-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem; margin-top:2rem; }
+.prob{ overflow:hidden; border-radius:var(--r-s);
+  background:linear-gradient(155deg, var(--glass) 0%, var(--glass-2) 100%); border:1px solid var(--glass-edge); }
+.prob-dia{ height:104px; display:grid; place-items:center; padding:.6rem;
+  background:rgba(255,255,255,.05); border-bottom:1px solid var(--glass-edge); }
+.prob-dia svg{ width:auto; height:66px; color:var(--cloud); opacity:.92; }
+.prob-body{ padding:.95rem 1.05rem 1.05rem; }
+.prob b{ display:block; color:#fff; font-size:.96rem; margin-bottom:.25rem; }
+.prob span{ display:block; color:var(--mist); font-size:.82rem; line-height:1.5; }
+@media (max-width:880px){ .prob-grid{ grid-template-columns:1fr 1fr; gap:.7rem; } }
+@media (max-width:520px){ .prob-grid{ grid-template-columns:1fr 1fr; gap:.6rem; } }
+
+/* ---------- Artarmon: stage cards ---------- */
+.stage-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:2rem; align-items:start; }
+.stage{ padding:1.7rem 1.5rem; border-radius:var(--r); box-shadow:var(--shadow-soft);
+  background:linear-gradient(155deg, var(--glass) 0%, var(--glass-2) 100%); border:1px solid var(--glass-edge); }
+.stage-num{ display:inline-grid; place-items:center; width:48px; height:48px; border-radius:50%;
+  background:#f5f5f6; color:#141416; font-weight:800; font-size:1.35rem; margin-bottom:1rem;
+  box-shadow:0 10px 22px -8px rgba(0,0,0,.5); }
+.stage h3{ margin:0 0 .15rem; color:#fff; font-size:1.16rem; line-height:1.25; }
+.stage-age{ color:var(--aqua); font-weight:600; font-size:.8rem; margin:0 0 .85rem; letter-spacing:.02em; }
+.stage-lede{ color:var(--mist); font-size:.9rem; margin:0 0 1rem; line-height:1.55; }
+.stage .ticks{ margin-top:.4rem; }
+.stage .ticks li{ font-size:.85rem; margin-bottom:.55rem; }
+@media (max-width:880px){ .stage-grid{ grid-template-columns:1fr; gap:.9rem; } }
+
+/* ---------- Artarmon: video placeholder ---------- */
+.video-ph{ position:relative; border-radius:var(--r); overflow:hidden; aspect-ratio:4/5;
+  border:1px solid var(--glass-edge); box-shadow:var(--shadow-card); cursor:pointer; }
+.video-ph img{ width:100%; height:100%; object-fit:cover; }
+.video-ph .play{ position:absolute; inset:0; margin:auto; width:76px; height:76px; border-radius:50%;
+  background:rgba(245,245,246,.95); display:grid; place-items:center; color:#141416;
+  box-shadow:0 12px 32px -8px rgba(0,0,0,.55); transition:transform .25s var(--ease); }
+.video-ph:hover .play{ transform:scale(1.08); }
+.video-ph .play svg{ width:30px; height:30px; margin-left:4px; }
+.video-ph-cap{ position:absolute; left:0; right:0; bottom:0; padding:1.6rem 1.2rem .95rem; z-index:2;
+  font-size:.82rem; color:#fff; font-weight:600; background:linear-gradient(180deg,transparent,rgba(8,20,36,.88)); }
+
+/* ---------- Artarmon: team group shot ---------- */
+.team-shot{ margin-top:2.2rem; }
+.team-shot img{ width:100%; max-width:780px; margin:0 auto; display:block;
+  filter:drop-shadow(0 24px 40px rgba(0,0,0,.45)); }
+.team-panel .lede{ max-width:60ch; }
+
+</style>
+</head>
+
+<body>
+<!-- ambient background -->
+<div class="bg" aria-hidden="true">
+  <span class="orb a"></span><span class="orb b"></span><span class="orb c"></span>
+</div>
+
+<!-- persistent top bar -->
+<header class="topbar">
+  <a class="brand" href="#hero" aria-label="Artarmon Dentists — children's orthodontics" style="display:flex;align-items:center;text-decoration:none;">
+    <img src="logo-white.png" alt="Artarmon Dentists" style="height:30px;width:auto;display:block">
+  </a>
+  <button class="btn btn-primary js-book" type="button">Book consultation</button>
+</header>
+
+<main class="deck" id="deck">
+
+  <!-- ================= 1. HERO ================= -->
+  <section class="panel" id="hero">
+    <div class="hero-photo" aria-hidden="true"></div>
+    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="panel-inner">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Artarmon · Orthodontics for children</p>
+        <h1 class="reveal d1">A head start on a
+          <span class="pop"><em>winning smile</em></span></h1>
+        <p class="hero-sub reveal d2">A straight, confident smile starts early. Gentle early orthodontic care guides your child's teeth and jaw into proper alignment — preventing future problems and setting up a healthy, beautiful smile for life.</p>
+
+        <div class="pay-chip glass reveal d2">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </span>
+          <div>
+            <b>Payment plans available</b>
+            <p>Spread the cost of your child's orthodontic treatment into manageable repayments. A $50 consultation fee applies.</p>
+          </div>
+        </div>
+
+        <ul class="trust reveal d3">
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Caring for Artarmon families for 40+ years</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Led by Dr Radhika Bhatla — Platinum Invisalign Provider</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Gentle, child-friendly approach</li>
+        </ul>
+
+        <p class="scroll-hint reveal d4"><span class="dot"></span>
+          <span class="hint-desktop">Scroll to explore</span>
+          <span class="hint-mobile">Swipe to explore →</span>
+        </p>
+      </div>
+
+      <!-- DESKTOP form mount (hidden on mobile) -->
+      <div class="hero-form-wrap reveal d2">
+        <div class="glass form-card" id="heroFormMount"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. PROBLEMS TO WATCH ================= -->
+  <section class="panel" id="problems">
+    <div class="panel-inner">
+      <p class="eyebrow reveal">Problems to watch for</p>
+      <h2 class="title reveal d1">Signs to watch for in growing children</h2>
+      <p class="lede reveal d2">Malocclusions — or "bad bites" — like these can benefit from early diagnosis and a simple orthodontic evaluation. Spotting them while your child is still growing usually means shorter, gentler treatment.</p>
+      <div class="prob-grid reveal d2">
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="28.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="15.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="28.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="8.0" y="30.0" width="13.0" height="26.0" rx="2.5" /><path d="M30 9 a11 11 0 0 0 -13 4"/><path d="M17 7 L17 14 L24 11 Z" fill="#e4e4e7" stroke="none"/></g></svg></div><div class="prob-body"><b>Crossbite — front teeth</b><span>Top front teeth sit behind the bottom teeth.</span></div></div>
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="12.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="28.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="12.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="28.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="82.0" y="30.0" width="13.0" height="26.0" rx="2.5" /><path d="M70 9 a11 11 0 0 1 13 4"/><path d="M83 7 L83 14 L76 11 Z" fill="#e4e4e7" stroke="none"/></g></svg></div><div class="prob-body"><b>Crossbite — back teeth</b><span>Top back teeth bite inside the bottom teeth.</span></div></div>
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-12 21 36)"><rect x="14.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(10 31 36)"><rect x="24.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(-8 40 36)"><rect x="33.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(12 51 36)"><rect x="44.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(-10 62 36)"><rect x="55.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(9 72 36)"><rect x="65.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(-12 83 36)"><rect x="76.0" y="22.0" width="14.0" height="28.0" rx="4" /></g></g></svg></div><div class="prob-body"><b>Crowding</b><span>Not enough room, so teeth overlap or twist.</span></div></div>
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="12.0" y="16.0" width="13.0" height="10.0" rx="2.5" /><rect x="28.0" y="16.0" width="13.0" height="10.0" rx="2.5" /><rect x="44.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="12.0" y="46.0" width="13.0" height="10.0" rx="2.5" /><rect x="28.0" y="46.0" width="13.0" height="10.0" rx="2.5" /><rect x="44.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><line x1="18" y1="26" x2="18" y2="46"/><path d="M14 31 L18 26 L22 31"/><path d="M14 41 L18 46 L22 41"/></g></svg></div><div class="prob-body"><b>Open bite</b><span>Front teeth don't meet when the back teeth close.</span></div></div>
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="8.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="24.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="40.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="56.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="72.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="18.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="34.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="50.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="66.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><line x1="8" y1="36" x2="30" y2="36"/><path d="M13 32 L8 36 L13 40"/><path d="M25 32 L30 36 L25 40"/></g></svg></div><div class="prob-body"><b>Protrusion</b><span>Upper front teeth stick out beyond the lowers.</span></div></div>
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="12.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="28.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="44.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="60.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="76.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="12.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="28.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><line x1="7" y1="16" x2="7" y2="46"/><path d="M3 21 L7 16 L11 21"/><path d="M3 41 L7 46 L11 41"/></g></svg></div><div class="prob-body"><b>Deep bite</b><span>Upper front teeth cover too much of the lowers.</span></div></div>
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="18.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="34.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="50.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="66.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="8.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="24.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="40.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="56.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="72.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><line x1="8" y1="36" x2="30" y2="36"/><path d="M13 32 L8 36 L13 40"/><path d="M25 32 L30 36 L25 40"/></g></svg></div><div class="prob-body"><b>Underbite</b><span>Lower teeth sit in front of the upper teeth.</span></div></div>
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="10.0" y="22.0" width="12.0" height="28.0" rx="4" /><rect x="30.0" y="22.0" width="12.0" height="28.0" rx="4" /><rect x="50.0" y="22.0" width="12.0" height="28.0" rx="4" /><rect x="70.0" y="22.0" width="12.0" height="28.0" rx="4" /></g></svg></div><div class="prob-body"><b>Spacing</b><span>Noticeable gaps between the teeth.</span></div></div>
+        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="14.0" y="14.0" width="12.0" height="12.0" rx="2.5" /><rect x="60.0" y="14.0" width="12.0" height="12.0" rx="2.5" /><rect x="74.0" y="14.0" width="12.0" height="12.0" rx="2.5" /><rect x="14.0" y="46.0" width="12.0" height="12.0" rx="2.5" /><rect x="60.0" y="46.0" width="12.0" height="12.0" rx="2.5" /><rect x="74.0" y="46.0" width="12.0" height="12.0" rx="2.5" /><path d="M34 70 L34 30 a9 9 0 0 1 18 0 L52 70"/><path d="M38 30 a4 4 0 0 0 10 0"/></g></svg></div><div class="prob-body"><b>Oral habits</b><span>Thumb or finger-sucking affecting development.</span></div></div>
+      </div>
+      <div class="pay-chip glass reveal d3" style="margin-top:1.6rem">
+        <span class="ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+        </span>
+        <div>
+          <b>Also worth a check if you notice…</b>
+          <p>early or late loss of baby teeth · difficulty chewing or biting · mouth breathing · jaws that shift or make sounds · speech difficulties · biting the cheek or roof of the mouth · facial imbalance · grinding or clenching.</p>
+        </div>
+      </div>
+      <div class="hero-cta reveal d3" style="margin-top:1.8rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Book your child's assessment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. THREE STAGES ================= -->
+  <section class="panel" id="stages">
+    <div class="panel-inner">
+      <p class="eyebrow reveal">A staged approach</p>
+      <h2 class="title reveal d1">The three stages of early orthodontic treatment</h2>
+      <p class="lede reveal d2">Because your child's teeth, jaws and muscles are still developing, treating at the right stage means more effective, longer-lasting results.</p>
+      <div class="stage-grid reveal d2">
+        <div class="stage">
+          <span class="stage-num" aria-hidden="true">1</span>
+          <h3>Prevention &amp; interception</h3>
+          <p class="stage-age">Ages 3–6 · Baby teeth</p>
+          <p class="stage-lede">Guiding healthy jaw development, facial symmetry and habits before problems take hold.</p>
+          <ul class="ticks">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Jaw position &amp; symmetry</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Tooth spacing &amp; alignment</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Breathing &amp; oral habits — thumb-sucking, mouth breathing, tongue thrusting</li>
+          </ul>
+        </div>
+        <div class="stage">
+          <span class="stage-num" aria-hidden="true">2</span>
+          <h3>Interception &amp; correction</h3>
+          <p class="stage-age">Ages 7–9 · Mixed dentition</p>
+          <p class="stage-lede">As permanent teeth emerge, we check how the jaws align and whether there's room for all teeth — especially the canines.</p>
+          <ul class="ticks">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Braces or removable appliances</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Space maintainers to guide eruption</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Palatal expanders for narrow arches &amp; breathing</li>
+          </ul>
+        </div>
+        <div class="stage">
+          <span class="stage-num" aria-hidden="true">3</span>
+          <h3>Correction &amp; rehabilitation</h3>
+          <p class="stage-age">Ages 10+ · Permanent teeth</p>
+          <p class="stage-lede">Final alignment of the teeth and jaws for a healthy bite, comfortable jaw and a confident smile.</p>
+          <ul class="ticks">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Traditional braces or clear aligners</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Bite correction for healthy jaw function</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Discreet, nearly-invisible options</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-cta reveal d3" style="margin-top:1.8rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Book your child's assessment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. DR RADHIKA + VIDEO ================= -->
+  <section class="panel" id="dentist">
+    <div class="panel-inner">
+      <div class="dentist-grid">
+        <div class="video-ph reveal d2 js-book" role="button" tabindex="0" aria-label="Meet Dr Radhika — book a consultation">
+          <img src="clinic.webp" alt="Artarmon Dentists caring for a young patient">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="video-ph-cap">Meet Dr Radhika &amp; the team — video coming soon</span>
+        </div>
+        <div>
+          <p class="eyebrow reveal">Meet your orthodontic dentist</p>
+          <h2 class="title reveal d1">Dr Radhika Bhatla</h2>
+          <p class="creds reveal d2">BDS (ADC SYD) · PGDip Digital Orthodontics · Platinum Invisalign Provider</p>
+          <p class="lede reveal d2">Dr Radhika has a particular passion for orthodontics and children's dentistry. An accredited Invisalign and ClearCorrect provider, she holds a Postgraduate Diploma in Digital Orthodontics and completed the Clear Ortho International master's course — and her Platinum Invisalign status reflects years of hands-on aligner experience.</p>
+          <p class="reveal d3" style="color:var(--mist);">Together with her husband Dr Nick Mehta, Radhika has cared for the Artarmon community since 2013. Parents regularly comment on her gentle, reassuring approach with children — making every visit calm and positive.</p>
+          <div class="hero-cta reveal d3" style="margin-top:1.6rem">
+            <button class="btn btn-primary btn-lg js-book" type="button">Book with Dr Radhika</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. WHY EARLY ================= -->
+  <section class="panel" id="why">
+    <div class="panel-inner">
+      <p class="eyebrow reveal">Why start early?</p>
+      <h2 class="title reveal d1">Why early orthodontic treatment?</h2>
+      <p class="lede reveal d2">Orthodontics does far more than straighten teeth. Starting while your child is still growing helps:</p>
+      <div class="cards two reveal d2">
+        <div class="card"><h3>Build a healthy bite</h3><p>Aligns the jaws and chewing muscles so the bite works comfortably.</p></div>
+        <div class="card"><h3>Improve the smile &amp; profile</h3><p>Supports balanced facial development and smile aesthetics.</p></div>
+        <div class="card"><h3>Prevent bigger problems</h3><p>Heads off long-term issues like crowding and misalignment.</p></div>
+        <div class="card"><h3>Simplify future treatment</h3><p>Often makes any later orthodontics shorter and easier.</p></div>
+      </div>
+      <h3 class="reveal d3" style="margin:2rem 0 .4rem; color:#fff; font-size:1.15rem;">What to expect in your child's journey</h3>
+      <ul class="ticks reveal d3">
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span><b>X-rays &amp; digital scans</b> — a detailed view of teeth, jawbones and facial structure to plan the most effective treatment.</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span><b>Dental impressions &amp; models</b> — so we can plan precise, gentle tooth movement.</li>
+        <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span><b>Before &amp; after photos</b> — so your child can see their amazing smile transformation.</li>
+      </ul>
+      <div class="hero-cta reveal d3" style="margin-top:1.8rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Book your child's assessment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. TEAM ================= -->
+  <section class="panel" id="team">
+    <div class="panel-inner team-panel">
+      <p class="eyebrow reveal">One team · one community</p>
+      <h2 class="title reveal d1">The people behind your child's smile</h2>
+      <p class="lede reveal d2">For over 40 years, Artarmon Dentists has cared for local families as a warm, family-owned practice. Our friendly team makes children feel relaxed and right at home — from their very first visit.</p>
+      <div class="team-shot reveal d2"><img src="team.webp" alt="The team at Artarmon Dentists" loading="lazy"></div>
+      <div class="hero-cta reveal d3" style="margin-top:1.6rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Meet us — book a visit</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. VIDEO (practice story) ================= -->
+  <section class="panel" id="watch">
+    <div class="panel-inner">
+      <p class="eyebrow reveal">Our story</p>
+      <h2 class="title reveal d1">Get to know Artarmon Dentists</h2>
+      <p class="lede reveal d2">Take a moment to meet the team and see why local families trust us with their children's smiles.</p>
+      <div class="video-embed reveal d2">
+        <iframe src="https://player.vimeo.com/video/1189722536?h=e22c046d7a&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen title="Artarmon Dentists"></iframe>
+      </div>
+      <div class="hero-cta reveal d3" style="margin-top:1.8rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Book your child's consultation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. BOOK ================= -->
+  <section class="panel" id="book">
+    <div class="panel-inner">
+      <div class="book-grid">
+        <div>
+          <p class="eyebrow reveal">Book a consultation</p>
+          <h2 class="title reveal d1">Give your child a head start</h2>
+          <p class="lede reveal d2" style="margin-bottom:1.2rem">Concerned about your child's teeth or bite — or simply want peace of mind? Early advice is the best first step.</p>
+          <ul class="book-points reveal d2">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>A gentle, child-friendly assessment</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>A clear explanation of what (if anything) is needed</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Payment plans available to spread the cost</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Led by Dr Radhika Bhatla, Platinum Invisalign Provider</li>
+          </ul>
+          <div class="pay-chip glass reveal d3" style="margin-top:1.2rem">
+            <span class="ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+            </span>
+            <div>
+              <b>A $50 consultation fee applies</b>
+              <p>This covers your child's assessment with our orthodontic team. Payment plans are available for any treatment that follows.</p>
+            </div>
+          </div>
+          <div class="book-cta-wrap reveal d3" style="margin-top:1.6rem">
+            <button class="btn btn-primary btn-lg js-book" type="button">Request my child's consultation</button>
+            <p style="color:var(--mist-dim); font-size:.82rem; margin-top:.8rem;">It only takes a minute, and there's no obligation.</p>
+          </div>
+        </div>
+
+        <!-- form (mobile shows here; desktop shows the hero copy of the form) -->
+        <div class="book-form-wrap reveal d2">
+          <div class="glass form-card" id="bookFormMount"></div>
+        </div>
+      </div>
+
+      <!-- address / map / legal — shown inside this panel on mobile (footer is hidden there) -->
+      <div class="legal-mobile" style="margin-top:2.6rem; border-top:1px solid rgba(255,255,255,.08); padding-top:1.8rem;">
+        <div style="margin-bottom:1.8rem;">
+          <p style="font-size:.85rem; color:var(--cloud); font-weight:600; margin:0 0 .3rem;">Visit us — Artarmon</p>
+          <p style="font-size:.82rem; color:var(--mist); margin:0 0 .8rem;">Shop 3, 110–114 Hampden Rd, Artarmon NSW 2064 · (02) 9412 4232</p>
+          <iframe class="map-embed" title="Map to Artarmon Dentists, Hampden Rd Artarmon" src="https://www.google.com/maps?q=Artarmon%20Dentists%20Shop%203%20110-114%20Hampden%20Rd%20Artarmon%20NSW%202064&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p style="font-size:.72rem; color:var(--mist-dim); line-height:1.6;">Orthodontic treatment requires a consultation to determine suitability, and outcomes vary between individuals. A $50 consultation fee applies. Payment plans are subject to provider terms and approval. Any dental procedure carries risks and benefits — before proceeding, seek advice from an appropriately qualified health practitioner.</p>
+        <p style="font-size:.72rem; color:var(--mist-dim); margin-top:1rem;">© Artarmon Dentists. All rights reserved.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THANK YOU (revealed after the form is submitted) ================= -->
+  <section class="panel" id="thanks" aria-live="polite">
+    <div class="panel-inner">
+      <div class="glass thanks-card reveal">
+        <div class="thanks-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>
+        </div>
+        <p class="eyebrow" style="justify-content:center">Request received</p>
+        <h2 id="thanksHeading" tabindex="-1">Thank you</h2>
+        <p class="lede" id="thanksMessage">We've received your details and our team will be in touch shortly to arrange your child's consultation.</p>
+        <ol class="next-steps">
+          <li><span class="num">1</span><span>Our team will give you a call to find a time that suits and answer any questions you have.</span></li>
+          <li><span class="num">2</span><span>At the $50 consultation, we'll gently assess your child's teeth, bite and jaw development.</span></li>
+          <li><span class="num">3</span><span>You'll get a clear plan — including payment plan options to spread the cost of any treatment.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FOOTER (desktop) ================= -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="logo-white.png" alt="Artarmon Dentists" style="height:40px;width:auto;display:block;margin-bottom:1rem;">
+        <span>Children's Orthodontics · Artarmon</span>
+      </div>
+      <div class="footer-contact" style="max-width:340px;">
+        Shop 3, 110–114 Hampden Rd, Artarmon NSW 2064<br>
+        <a href="tel:+61294124232" style="color:inherit;text-decoration:none;">(02) 9412 4232</a>
+        <span style="display:block;margin-top:.55rem;font-size:.82rem;opacity:.82;">Mon–Thu 8am–6pm · Fri 8am–3pm</span>
+        <iframe class="map-embed" title="Map to Artarmon Dentists, Hampden Rd Artarmon" src="https://www.google.com/maps?q=Artarmon%20Dentists%20Shop%203%20110-114%20Hampden%20Rd%20Artarmon%20NSW%202064&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <button class="btn btn-ghost js-book" type="button" style="margin-top:1rem;">Book a consultation →</button>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Early orthodontic (interceptive) treatment requires a consultation to determine suitability, and outcomes vary between individuals.</p>
+      <p>A $50 consultation fee applies. Payment plans are available for any treatment that follows and are subject to provider terms and approval.</p>
+      <p>Any dental procedure carries risks and benefits. Before proceeding, you should seek advice from an appropriately qualified health practitioner.</p>
+      <p class="copy">© Artarmon Dentists, All rights reserved · Website Design by <a href="https://generateyouraudience.com/" target="_blank" rel="noopener">Generate Your Audience</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= Desktop side progress nav ================= -->
+<nav class="sidenav" id="sidenav" aria-label="Section navigation"></nav>
+
+<!-- ================= Mobile dock ================= -->
+<div class="dock" id="dock">
+  <button class="dock-arrow" id="prevBtn" type="button" aria-label="Previous section">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <div class="dock-center">
+    <div class="dock-label" id="dockLabel">Welcome</div>
+    <div class="dock-dots" id="dockDots"></div>
+  </div>
+  <button class="dock-arrow" id="nextBtn" type="button" aria-label="Next section">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>
+
+<noscript>
+  <div style="position:fixed;inset:0;display:grid;place-items:center;background:var(--navy-900);z-index:999;padding:2rem;text-align:center;color:#fff">
+    <div>
+      <h2 style="font-family:'Fraunces',serif">Book your child's consultation</h2>
+      <p style="color:var(--mist)">Please enable JavaScript in your browser to book your consultation online.</p>
+    </div>
+  </div>
+</noscript>
+
+<script>
+/* =========================================================================
+   CONFIG — edit these to connect the form and add your real photos
+   ========================================================================= */
+const CONFIG = {
+  // Where to send leads. Set to "/api/lead" — the included serverless relay
+  // (api/lead.js) lives on the SAME Vercel project/domain as this page, so a
+  // same-origin path is all that's needed (no CORS to configure). That relay
+  // emails your SmileOx CRM intake address over SMTP/TLS, because a browser
+  // cannot send SMTP email directly.
+  // NOTE: submitting only works once deployed on Vercel. Opening this file
+  // straight off your computer will show an error on submit — that's expected.
+  FORM_ENDPOINT: "/api/lead"
+};
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const mqMobile = window.matchMedia("(max-width: 880px)");
+const isMobile = () => mqMobile.matches;
+
+/* ---------- Build the lead form ---------- */
+function buildForm(mount, prefix){
+  mount.innerHTML =
+    '<form class="lead-form" novalidate>'
+    + '<div class="form-head"><h3 class="form-title">Book your child\'s consultation</h3>'
+    + '<p class="form-sub">Tell us a little about your child and we\'ll be in touch to arrange a gentle assessment. A $50 consultation fee applies — no obligation.</p></div>'
+    + '<div class="form-body">'
+    + '<div class="field-row">'
+    +   '<label class="field" data-field="firstName"><span class="field-label">Your first name <span class="req">*</span></span>'
+    +   '<input type="text" name="firstName" autocomplete="given-name" placeholder="Your first name" required>'
+    +   '<span class="err-msg">Please enter your first name.</span></label>'
+    +   '<label class="field" data-field="lastName"><span class="field-label">Your last name <span class="req">*</span></span>'
+    +   '<input type="text" name="lastName" autocomplete="family-name" placeholder="Your last name" required>'
+    +   '<span class="err-msg">Please enter your last name.</span></label>'
+    + '</div>'
+    + '<div class="field-row">'
+    +   '<label class="field" data-field="childName"><span class="field-label">Child\'s first name <span class="req">*</span></span>'
+    +   '<input type="text" name="childName" autocomplete="off" placeholder="Child\'s first name" required>'
+    +   '<span class="err-msg">Please enter your child\'s first name.</span></label>'
+    +   '<label class="field" data-field="childAge"><span class="field-label">Child\'s age <span style="opacity:.55;font-weight:500">(optional)</span></span>'
+    +   '<input type="text" name="childAge" inputmode="numeric" autocomplete="off" placeholder="e.g. 7">'
+    +   '<span class="err-msg"></span></label>'
+    + '</div>'
+    + '<label class="field" data-field="email"><span class="field-label">Email <span class="req">*</span></span>'
+    + '<input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>'
+    + '<span class="err-msg">Please enter a valid email address.</span></label>'
+    + '<label class="field" data-field="phone"><span class="field-label">Phone <span class="req">*</span></span>'
+    + '<input type="tel" name="phone" inputmode="tel" autocomplete="tel" placeholder="04xx xxx xxx" required>'
+    + '<span class="err-msg">Please enter a valid phone number.</span></label>'
+    + '<fieldset class="q" data-q="concerns" data-multi="1"><legend>What brings you in? (tick any that apply)</legend><div class="opts">'
+    +   '<button type="button" class="opt" data-value="Crowding">Crowding</button>'
+    +   '<button type="button" class="opt" data-value="Crossbite or underbite">Crossbite / underbite</button>'
+    +   '<button type="button" class="opt" data-value="Thumb-sucking or oral habits">Thumb-sucking / habits</button>'
+    +   '<button type="button" class="opt" data-value="Gaps or spacing">Gaps or spacing</button>'
+    +   '<button type="button" class="opt" data-value="Bite or jaw concerns">Bite or jaw concerns</button>'
+    +   '<button type="button" class="opt" data-value="Just a check-up for peace of mind">Just peace of mind</button>'
+    + '</div></fieldset>'
+    + '<input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">'
+    + '<button type="submit" class="btn btn-primary btn-block btn-lg submit-btn">Request my child\'s consultation</button>'
+    + '<p class="form-foot">A $50 consultation fee applies. Your details are kept private and used only to arrange your child\'s consultation.</p>'
+    + '</div>'
+    + '<div class="form-success" hidden><div class="sx"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg></div>'
+    + '<h3>Thank you</h3><p class="sx-msg"></p></div>'
+    + '</form>';
+
+  wireForm(mount.querySelector("form"));
+}
+
+function wireForm(form){
+  form.querySelectorAll("input").forEach(i=>{
+    i.addEventListener("input", ()=> i.closest(".field") && i.closest(".field").classList.remove("err"));
+  });
+  // option chips — single-select, or multi-select when the fieldset has data-multi
+  form.querySelectorAll("fieldset.q").forEach(fs=>{
+    const multi = fs.hasAttribute("data-multi");
+    fs.querySelectorAll(".opt").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        if(multi){
+          btn.classList.toggle("is-selected");
+        } else {
+          fs.querySelectorAll(".opt").forEach(b=> b.classList.remove("is-selected"));
+          btn.classList.add("is-selected");
+        }
+        fs.classList.remove("err");
+      });
+    });
+  });
+
+  form.addEventListener("submit", e=>{
+    e.preventDefault();
+    // honeypot — silently drop bots
+    if(form.querySelector(".hp").value){ return; }
+
+    let ok = true;
+    const grab = key => { const f=form.querySelector('[data-field="'+key+'"]'); return { f, v:f.querySelector("input").value.trim() }; };
+    const fail = f => { f.classList.add("err"); ok=false; };
+
+    const first = grab("firstName"); if(first.v.length < 1) fail(first.f);
+    const last  = grab("lastName");  if(last.v.length  < 1) fail(last.f);
+    const child = grab("childName"); if(child.v.length < 1) fail(child.f);
+    const childAge = grab("childAge");   // optional — not validated
+    const email = grab("email");     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.v)) fail(email.f);
+    const phone = grab("phone");     if(!/^[\d\s()+\-]{8,}$/.test(phone.v)) fail(phone.f);
+
+    if(!ok){
+      const firstErr = form.querySelector(".field.err");
+      if(firstErr) firstErr.scrollIntoView({behavior: reduceMotion?"auto":"smooth", block:"center"});
+      return;
+    }
+
+    // Payload uses the field names the SmileOx CRM intake expects.
+    const chips = q => { const fs=form.querySelector('fieldset.q[data-q="'+q+'"]'); if(!fs) return "";
+      return Array.from(fs.querySelectorAll(".opt.is-selected")).map(b=>b.dataset.value).join(", "); };
+    const data = { firstName:first.v, lastName:last.v, childName:child.v, childAge:childAge.v,
+      email:email.v, phoneNumber:phone.v, concerns: chips("concerns") };
+
+    const submitBtn = form.querySelector(".submit-btn");
+    submitBtn.disabled = true; submitBtn.textContent = "Sending…";
+
+    const finish = ()=>{
+      // collapse this form to a short confirmation…
+      form.querySelector(".form-body").style.display = "none";
+      const succ = form.querySelector(".form-success");
+      succ.hidden = false;
+      succ.querySelector(".sx-msg").textContent =
+        "Thanks " + data.firstName + " — we'll be in touch shortly to arrange " + data.childName + "'s consultation.";
+      // …and move the visitor on to the dedicated thank-you section.
+      leadSuccess(data);
+    };
+
+    if(CONFIG.FORM_ENDPOINT){
+      fetch(CONFIG.FORM_ENDPOINT, {
+        method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+        body: JSON.stringify(data)
+      }).then(async r=>{
+          let info = null;
+          try { info = await r.json(); } catch(e){}
+          if(!r.ok || (info && info.ok === false)){
+            let reason = info && info.missing ? ("missing env vars: " + info.missing.join(", "))
+              : (info && (info.detail || info.error)) || ("HTTP " + r.status);
+            if(reason && typeof reason === "object") reason = JSON.stringify(reason);
+            throw new Error(String(reason));
+          }
+          return r;
+        })
+        .then(finish)
+        .catch(err=>{ submitBtn.disabled=false; submitBtn.textContent="Request my child's consultation";
+          console.error("Lead submit failed:", err);
+          alert("Sorry, something went wrong sending your details.\n\nReason: " + (err && err.message ? err.message : err) + "\n\nPlease try again in a moment."); });
+    } else {
+      setTimeout(finish, 450); // demo mode (no endpoint set yet)
+    }
+  });
+}
+
+buildForm(document.getElementById("heroFormMount"), "h");
+buildForm(document.getElementById("bookFormMount"), "b");
+
+/* ---------- FAQ accordion ---------- */
+document.querySelectorAll(".faq-item").forEach(item=>{
+  const btn = item.querySelector(".faq-q");
+  const a = item.querySelector(".faq-a");
+  btn.addEventListener("click", ()=>{
+    const open = item.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open);
+    a.style.maxHeight = open ? a.scrollHeight + "px" : 0;
+  });
+});
+
+/* ---------- Navigation (dots / dock / side nav) ---------- */
+const deck = document.getElementById("deck");
+const panels = Array.from(deck.querySelectorAll(".panel"));
+const chapters = [
+  {id:"hero",label:"Welcome"},{id:"problems",label:"Watch for"},{id:"stages",label:"3 Stages"},
+  {id:"dentist",label:"Dr Radhika"},{id:"why",label:"Why early"},{id:"team",label:"Our team"},
+  {id:"watch",label:"Our story"},{id:"book",label:"Book"}
+];
+const bookIndex = chapters.findIndex(c=>c.id==="book");
+let current = 0;
+
+const sidenav = document.getElementById("sidenav");
+const dockDots = document.getElementById("dockDots");
+const dockLabel = document.getElementById("dockLabel");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+chapters.forEach((c,i)=>{
+  const s = document.createElement("button");
+  s.type="button"; s.setAttribute("aria-label","Go to "+c.label);
+  s.innerHTML = '<span class="lbl">'+c.label+'</span>';
+  s.addEventListener("click", ()=>goTo(i));
+  sidenav.appendChild(s);
+
+  const d = document.createElement("button");
+  d.type="button"; d.setAttribute("aria-label","Go to "+c.label);
+  d.addEventListener("click", ()=>goTo(i));
+  dockDots.appendChild(d);
+});
+const sideBtns = Array.from(sidenav.children);
+const dotBtns = Array.from(dockDots.children);
+
+function setActive(i){
+  if(i<0 || i>=chapters.length || i===current) return;
+  current = i;
+  sideBtns.forEach((b,k)=>b.classList.toggle("active", k===i));
+  dotBtns.forEach((b,k)=>b.classList.toggle("active", k===i));
+  dockLabel.textContent = chapters[i].label;
+  prevBtn.disabled = i===0;
+  nextBtn.disabled = i===chapters.length-1;
+}
+
+function goTo(i, focusForm){
+  i = Math.max(0, Math.min(chapters.length-1, i));
+  const beh = reduceMotion ? "auto" : "smooth";
+  if(isMobile()){
+    deck.scrollTo({ left: i*deck.clientWidth, behavior: beh });
+  } else {
+    document.getElementById(chapters[i].id).scrollIntoView({ behavior: beh, block:"start" });
+  }
+  setActive(i);
+  if(focusForm){
+    setTimeout(()=>{
+      const wrap = isMobile() ? document.querySelector(".book-form-wrap") : document.querySelector(".hero-form-wrap");
+      const first = wrap && wrap.querySelector("input:not(.hp)");
+      if(first) first.focus({preventScroll:true});
+    }, reduceMotion?0:600);
+  }
+}
+
+/* "Book" buttons everywhere */
+function bookAction(){ goTo(isMobile() ? bookIndex : 0, true); }
+document.querySelectorAll(".js-book").forEach(b=> b.addEventListener("click", bookAction));
+
+/* Reveal + move to the thank-you section once a lead is captured */
+function leadSuccess(data){
+  const h = document.getElementById("thanksHeading");
+  const m = document.getElementById("thanksMessage");
+  if(h) h.textContent = "Thank you, " + data.firstName;
+  if(m) m.textContent = "We've received your details and our team will call you on "
+        + data.phoneNumber + " shortly to arrange " + data.childName + "'s consultation.";
+
+  document.body.classList.add("lead-submitted");      // un-hides #thanks
+  const thanksPanelIndex = panels.length - 1;          // #thanks is the last panel in the deck
+  const beh = reduceMotion ? "auto" : "smooth";
+
+  // wait a frame so the panel leaves display:none before we scroll to it
+  requestAnimationFrame(()=>{
+    if(isMobile()){
+      deck.scrollTo({ left: thanksPanelIndex * deck.clientWidth, behavior: beh });
+    } else {
+      document.getElementById("thanks").scrollIntoView({ behavior: beh, block:"start" });
+    }
+    const card = document.querySelector(".thanks-card");
+    if(card) card.classList.add("in");
+    if(h) h.focus({ preventScroll:true });
+  });
+}
+
+prevBtn.addEventListener("click", ()=>goTo(current-1));
+nextBtn.addEventListener("click", ()=>goTo(current+1));
+
+/* keyboard arrows on mobile */
+window.addEventListener("keydown", e=>{
+  if(!isMobile()) return;
+  const tag = (e.target.tagName||"").toLowerCase();
+  if(tag==="input"||tag==="textarea") return;
+  if(e.key==="ArrowRight"){ goTo(current+1); }
+  if(e.key==="ArrowLeft"){ goTo(current-1); }
+});
+
+/* track active section */
+let scrollT;
+deck.addEventListener("scroll", ()=>{
+  if(!isMobile()) return;
+  clearTimeout(scrollT);
+  scrollT = setTimeout(()=>{ setActive(Math.round(deck.scrollLeft / deck.clientWidth)); }, 60);
+}, {passive:true});
+
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      // reveal children as soon as the panel enters view (works for tall panels too)
+      en.target.querySelectorAll(".reveal").forEach(r=>r.classList.add("in"));
+      // highlight the side-nav / dock once the panel is meaningfully in view
+      if(!isMobile() && en.intersectionRatio >= 0.3){
+        const idx = chapters.findIndex(c=>c.id===en.target.id);
+        if(idx>-1) setActive(idx);
+      }
+    }
+  });
+}, { threshold: [0, 0.3] });
+panels.forEach(p=>io.observe(p));
+
+/* initial reveal for hero + recalc on layout change */
+function refreshLayout(){
+  if(isMobile()){
+    document.querySelectorAll(".reveal").forEach(r=>r.classList.add("in"));
+    setActive(Math.round(deck.scrollLeft / deck.clientWidth) || 0);
+  } else {
+    panels[0].querySelectorAll(".reveal").forEach(r=>r.classList.add("in"));
+  }
+}
+mqMobile.addEventListener("change", ()=>{ deck.scrollTo({left:0}); window.scrollTo({top:0}); setTimeout(refreshLayout,50); });
+refreshLayout();
+
+</script>
+<!-- Instagram embeds (renders the reels in the Stories section) -->
+</body>
+</html>
