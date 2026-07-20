@@ -486,14 +486,24 @@ body.lead-submitted #thanks{ display:flex; }
 .prob-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem; margin-top:2rem; }
 .prob{ overflow:hidden; border-radius:var(--r-s);
   background:linear-gradient(155deg, var(--glass) 0%, var(--glass-2) 100%); border:1px solid var(--glass-edge); }
-.prob-dia{ height:104px; display:grid; place-items:center; padding:.6rem;
-  background:rgba(255,255,255,.05); border-bottom:1px solid var(--glass-edge); }
-.prob-dia svg{ width:auto; height:66px; color:var(--cloud); opacity:.92; }
+.prob-dia{ height:150px; background:rgba(255,255,255,.05); border-bottom:1px solid var(--glass-edge); }
+.prob-dia img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.85); }
+@media (max-width:520px){ .prob-dia{ height:118px; } }
 .prob-body{ padding:.95rem 1.05rem 1.05rem; }
 .prob b{ display:block; color:#fff; font-size:.96rem; margin-bottom:.25rem; }
 .prob span{ display:block; color:var(--mist); font-size:.82rem; line-height:1.5; }
 @media (max-width:880px){ .prob-grid{ grid-template-columns:1fr 1fr; gap:.7rem; } }
 @media (max-width:520px){ .prob-grid{ grid-template-columns:1fr 1fr; gap:.6rem; } }
+
+/* ---------- Artarmon: aligner brand row ---------- */
+.brand-row{ display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; margin-top:1.5rem; }
+.brand-chip{ display:grid; place-items:center; background:#fff; border-radius:14px; padding:.5rem .8rem;
+  box-shadow:0 10px 26px -10px rgba(0,0,0,.55); border:1px solid rgba(255,255,255,.35); }
+.brand-chip img{ height:78px; width:auto; display:block; }
+.brand-mark{ width:auto; display:block; opacity:.92; filter:brightness(0) invert(1); }
+.brand-inv{ height:58px; }
+.brand-angel{ height:34px; }
+@media (max-width:520px){ .brand-row{ gap:1.1rem; } .brand-chip img{ height:64px; } .brand-inv{ height:48px; } .brand-angel{ height:28px; } }
 
 /* ---------- Artarmon: stage cards ---------- */
 .stage-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:2rem; align-items:start; }
@@ -569,7 +579,7 @@ body.lead-submitted #thanks{ display:flex; }
 
         <ul class="trust reveal d3">
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Caring for Artarmon families for 40+ years</li>
-          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Led by Dr Radhika Bhatla — Platinum Invisalign Provider</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Led by Dr Radhika Bhatla — Platinum Invisalign &amp; Angel Aligner provider</li>
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Gentle, child-friendly approach</li>
         </ul>
 
@@ -593,15 +603,15 @@ body.lead-submitted #thanks{ display:flex; }
       <h2 class="title reveal d1">Signs to watch for in growing children</h2>
       <p class="lede reveal d2">Malocclusions — or "bad bites" — like these can benefit from early diagnosis and a simple orthodontic evaluation. Spotting them while your child is still growing usually means shorter, gentler treatment.</p>
       <div class="prob-grid reveal d2">
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="28.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="15.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="28.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="8.0" y="30.0" width="13.0" height="26.0" rx="2.5" /><path d="M30 9 a11 11 0 0 0 -13 4"/><path d="M17 7 L17 14 L24 11 Z" fill="#e4e4e7" stroke="none"/></g></svg></div><div class="prob-body"><b>Crossbite — front teeth</b><span>Top front teeth sit behind the bottom teeth.</span></div></div>
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="12.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="28.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="12.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="28.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="82.0" y="30.0" width="13.0" height="26.0" rx="2.5" /><path d="M70 9 a11 11 0 0 1 13 4"/><path d="M83 7 L83 14 L76 11 Z" fill="#e4e4e7" stroke="none"/></g></svg></div><div class="prob-body"><b>Crossbite — back teeth</b><span>Top back teeth bite inside the bottom teeth.</span></div></div>
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-12 21 36)"><rect x="14.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(10 31 36)"><rect x="24.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(-8 40 36)"><rect x="33.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(12 51 36)"><rect x="44.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(-10 62 36)"><rect x="55.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(9 72 36)"><rect x="65.0" y="22.0" width="14.0" height="28.0" rx="4" /></g><g transform="rotate(-12 83 36)"><rect x="76.0" y="22.0" width="14.0" height="28.0" rx="4" /></g></g></svg></div><div class="prob-body"><b>Crowding</b><span>Not enough room, so teeth overlap or twist.</span></div></div>
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="12.0" y="16.0" width="13.0" height="10.0" rx="2.5" /><rect x="28.0" y="16.0" width="13.0" height="10.0" rx="2.5" /><rect x="44.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="12.0" y="46.0" width="13.0" height="10.0" rx="2.5" /><rect x="28.0" y="46.0" width="13.0" height="10.0" rx="2.5" /><rect x="44.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><line x1="18" y1="26" x2="18" y2="46"/><path d="M14 31 L18 26 L22 31"/><path d="M14 41 L18 46 L22 41"/></g></svg></div><div class="prob-body"><b>Open bite</b><span>Front teeth don't meet when the back teeth close.</span></div></div>
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="8.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="24.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="40.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="56.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="72.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="18.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="34.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="50.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="66.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><line x1="8" y1="36" x2="30" y2="36"/><path d="M13 32 L8 36 L13 40"/><path d="M25 32 L30 36 L25 40"/></g></svg></div><div class="prob-body"><b>Protrusion</b><span>Upper front teeth stick out beyond the lowers.</span></div></div>
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="12.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="28.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="44.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="60.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="76.0" y="16.0" width="13.0" height="30.0" rx="2.5" /><rect x="12.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="28.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="44.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="60.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="76.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><line x1="7" y1="16" x2="7" y2="46"/><path d="M3 21 L7 16 L11 21"/><path d="M3 41 L7 46 L11 41"/></g></svg></div><div class="prob-body"><b>Deep bite</b><span>Upper front teeth cover too much of the lowers.</span></div></div>
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="18.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="34.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="50.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="66.0" y="16.0" width="13.0" height="16.0" rx="2.5" /><rect x="8.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="24.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="40.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="56.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><rect x="72.0" y="40.0" width="13.0" height="16.0" rx="2.5" /><line x1="8" y1="36" x2="30" y2="36"/><path d="M13 32 L8 36 L13 40"/><path d="M25 32 L30 36 L25 40"/></g></svg></div><div class="prob-body"><b>Underbite</b><span>Lower teeth sit in front of the upper teeth.</span></div></div>
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="10.0" y="22.0" width="12.0" height="28.0" rx="4" /><rect x="30.0" y="22.0" width="12.0" height="28.0" rx="4" /><rect x="50.0" y="22.0" width="12.0" height="28.0" rx="4" /><rect x="70.0" y="22.0" width="12.0" height="28.0" rx="4" /></g></svg></div><div class="prob-body"><b>Spacing</b><span>Noticeable gaps between the teeth.</span></div></div>
-        <div class="prob"><div class="prob-dia"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 72"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><rect x="14.0" y="14.0" width="12.0" height="12.0" rx="2.5" /><rect x="60.0" y="14.0" width="12.0" height="12.0" rx="2.5" /><rect x="74.0" y="14.0" width="12.0" height="12.0" rx="2.5" /><rect x="14.0" y="46.0" width="12.0" height="12.0" rx="2.5" /><rect x="60.0" y="46.0" width="12.0" height="12.0" rx="2.5" /><rect x="74.0" y="46.0" width="12.0" height="12.0" rx="2.5" /><path d="M34 70 L34 30 a9 9 0 0 1 18 0 L52 70"/><path d="M38 30 a4 4 0 0 0 10 0"/></g></svg></div><div class="prob-body"><b>Oral habits</b><span>Thumb or finger-sucking affecting development.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-crossbite-front.webp" alt="Crossbite of front teeth — top front teeth sitting behind the bottom teeth" loading="lazy"></div><div class="prob-body"><b>Crossbite — front teeth</b><span>Top front teeth sit behind the bottom teeth.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-crossbite-back.webp" alt="Crossbite of back teeth — top back teeth biting inside the bottom teeth" loading="lazy"></div><div class="prob-body"><b>Crossbite — back teeth</b><span>Top back teeth bite to the inside of the bottom teeth.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-crowding.webp" alt="Dental crowding — teeth overlapping and twisting from lack of room" loading="lazy"></div><div class="prob-body"><b>Crowding</b><span>Not enough room, so teeth overlap or twist.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-openbite.webp" alt="Open bite — front teeth not meeting when the back teeth are closed" loading="lazy"></div><div class="prob-body"><b>Open bite</b><span>Front teeth don't meet when the back teeth are closed.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-protrusion.webp" alt="Protrusion — upper front teeth sticking out beyond the lowers" loading="lazy"></div><div class="prob-body"><b>Protrusion</b><span>Upper front teeth stick out beyond the lowers.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-deepbite.webp" alt="Deep bite — upper front teeth covering too much of the lower teeth" loading="lazy"></div><div class="prob-body"><b>Deep bite</b><span>Upper front teeth cover too much of the lowers.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-underbite.webp" alt="Underbite — lower teeth sitting in front of the upper teeth" loading="lazy"></div><div class="prob-body"><b>Underbite</b><span>Lower teeth sit in front of the upper teeth when the back teeth are closed.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-spacing.webp" alt="Spacing — noticeable gaps between the teeth" loading="lazy"></div><div class="prob-body"><b>Spacing</b><span>Noticeable gaps between the teeth.</span></div></div>
+        <div class="prob"><div class="prob-dia"><img src="prob-oral-habits.webp" alt="Oral habits — thumb and finger sucking affecting dental development" loading="lazy"></div><div class="prob-body"><b>Oral habits</b><span>Thumb or finger-sucking affecting development.</span></div></div>
       </div>
       <div class="pay-chip glass reveal d3" style="margin-top:1.6rem">
         <span class="ico" aria-hidden="true">
@@ -653,7 +663,7 @@ body.lead-submitted #thanks{ display:flex; }
           <p class="stage-age">Ages 10+ · Permanent teeth</p>
           <p class="stage-lede">Final alignment of the teeth and jaws for a healthy bite, comfortable jaw and a confident smile.</p>
           <ul class="ticks">
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Traditional braces or clear aligners</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Traditional braces or clear aligners (Invisalign&reg; &amp; Angel Aligner&trade;)</li>
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Bite correction for healthy jaw function</li>
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Discreet, nearly-invisible options</li>
           </ul>
@@ -677,9 +687,14 @@ body.lead-submitted #thanks{ display:flex; }
         <div>
           <p class="eyebrow reveal">Meet your orthodontic dentist</p>
           <h2 class="title reveal d1">Dr Radhika Bhatla</h2>
-          <p class="creds reveal d2">BDS (ADC SYD) · PGDip Digital Orthodontics · Platinum Invisalign Provider</p>
-          <p class="lede reveal d2">Dr Radhika has a particular passion for orthodontics and children's dentistry. An accredited Invisalign and ClearCorrect provider, she holds a Postgraduate Diploma in Digital Orthodontics and completed the Clear Ortho International master's course — and her Platinum Invisalign status reflects years of hands-on aligner experience.</p>
+          <p class="creds reveal d2">BDS (ADC SYD) · PGDip Digital Orthodontics · Platinum Invisalign Provider · Angel Aligner Provider</p>
+          <p class="lede reveal d2">Dr Radhika has a particular passion for orthodontics and children's dentistry. An accredited Invisalign, Angel Aligner and ClearCorrect provider, she holds a Postgraduate Diploma in Digital Orthodontics and completed the Clear Ortho International master's course — and she treats with both the Invisalign&reg; and Angel Aligner&trade; systems, with her Platinum Invisalign status reflecting years of hands-on aligner experience.</p>
           <p class="reveal d3" style="color:var(--mist);">Together with her husband Dr Nick Mehta, Radhika has cared for the Artarmon community since 2013. Parents regularly comment on her gentle, reassuring approach with children — making every visit calm and positive.</p>
+          <div class="brand-row reveal d3" aria-label="Clear aligner accreditations">
+            <span class="brand-chip"><img src="platinum-invisalign.webp" alt="Platinum Invisalign Provider badge"></span>
+            <img class="brand-mark brand-inv" src="invisalign.png" alt="Invisalign">
+            <img class="brand-mark brand-angel" src="angel-aligner.png" alt="Angel Aligner">
+          </div>
           <div class="hero-cta reveal d3" style="margin-top:1.6rem">
             <button class="btn btn-primary btn-lg js-book" type="button">Book with Dr Radhika</button>
           </div>
@@ -752,7 +767,7 @@ body.lead-submitted #thanks{ display:flex; }
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>A gentle, child-friendly assessment</li>
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>A clear explanation of what (if anything) is needed</li>
             <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Payment plans available to spread the cost</li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Led by Dr Radhika Bhatla, Platinum Invisalign Provider</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 6"/></svg></span>Led by Dr Radhika Bhatla, Platinum Invisalign &amp; Angel Aligner provider</li>
           </ul>
           <div class="pay-chip glass reveal d3" style="margin-top:1.2rem">
             <span class="ico" aria-hidden="true">

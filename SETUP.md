@@ -17,6 +17,9 @@ The booking form captures the **parent's name + the child's name** (and optional
 | `hero.webp` | Your reception photo — the hero/banner background image |
 | `logo.png` | Your logo (original dark version, transparent) |
 | `logo-white.png` | White version of your logo, used in the (dark) header & footer |
+| `prob-*.webp` (×9) | Clinical photos for the "Problems to watch for" cards |
+| `platinum-invisalign.webp` | Platinum Invisalign Provider badge (Dr Radhika's profile) |
+| `invisalign.png` / `angel-aligner.png` | Aligner brand logos (rendered white on the dark theme) |
 | `package.json` | Project metadata for Vercel |
 | `SETUP.md` | This file |
 
@@ -56,12 +59,13 @@ When a real lead is submitted you'll get an email with the parent, child (and ag
 - [ ] **Dr Radhika video** — the "Meet Dr Radhika" block currently shows `clinic.webp` with a "video coming soon" caption and acts as a Book button. When the video is ready, swap that block for an embed (same pattern as the Vimeo "Our story" section).
 - [ ] **Logo** — the top bar and footer now use your supplied logo (`logo-white.png`, recoloured white for the dark theme). The original is included as `logo.png`. Replace either file if you have a preferred lockup.
 - [ ] Confirm the **$50 consultation fee** wording and **payment-plans** framing match how you describe them to patients.
+- [ ] Confirm usage rights for the nine AAO clinical photos now used in the "Problems to watch for" section.
 
 ---
 
 ## Notes
 
-- The **"Problems to watch for"** section was rebuilt from scratch as styled cards (it does **not** reuse the third-party clinical infographic). Each of the nine malocclusions now has its own **schematic SVG diagram** (crossbite, crowding, open bite, overjet, deep bite, underbite, spacing, oral habits).
+- The **"Problems to watch for"** section now shows the nine **real clinical photos** (cropped from the AAO "Problems to Watch for in Growing Children" infographic you supplied) as `prob-*.webp` files. Note these photos originate from third-party AAO patient-education material — confirm you're comfortable with the usage rights before going live.
 - The page uses a **monochrome (black / white / grey)** palette to match your branding, on the existing dark liquid-glass layout, with your reception photo behind the hero.
 - The **"Our story"** video is the Vimeo embed you supplied (`vimeo.com/1189722536`).
 - Content is drawn from your interceptive-orthodontics page and team page (three treatment stages, why-early benefits, Dr Radhika's bio, 40+ years in Artarmon).
