@@ -321,11 +321,11 @@ body.lead-submitted #thanks{ display:flex; }
   border-radius:var(--r); overflow:hidden; border:1px solid rgba(255,255,255,.1); box-shadow:0 30px 80px rgba(0,0,0,.5); background:#000; }
 .video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
 /* ---------- Artarmon: click-to-play video facades + gallery ---------- */
-.vgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:2.2rem; }
-@media (max-width:880px){ .vgrid{ grid-template-columns:1fr; gap:1rem; max-width:520px; margin-left:auto; margin-right:auto; } }
+.vgrid{ display:grid; grid-template-columns:repeat(3, minmax(0,300px)); justify-content:center; gap:1.3rem; margin-top:2.2rem; }
+@media (max-width:880px){ .vgrid{ grid-template-columns:min(80vw,320px); gap:1.4rem; } }
 .vfacade{ position:relative; overflow:hidden; cursor:pointer; background:#000; border-radius:var(--r);
   border:1px solid rgba(255,255,255,.1); box-shadow:0 24px 64px rgba(0,0,0,.5); }
-.vgrid .vfacade{ aspect-ratio:16/9; }
+.vgrid .vfacade{ aspect-ratio:9/16; }
 .vfacade--portrait{ aspect-ratio:4/5; }
 .vfacade .vposter{ position:absolute; inset:0; background-size:cover; background-position:center;
   background-color:#0d0d0f; background-image:linear-gradient(155deg, var(--glass) 0%, var(--glass-2) 100%);
