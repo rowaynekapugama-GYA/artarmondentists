@@ -31,19 +31,29 @@ The booking form captures the **parent's name + the child's name** (and optional
 2. In Vercel: **Add New → Project → Import** the repo. No build step or framework preset needed — it deploys as static + the `/api` function automatically.
 3. Add the environment variables below, then **redeploy** so they take effect.
 
-### Environment variables
-`Project → Settings → Environment Variables`
+### Configuration — works out of the box
 
-Only **one** variable is required — the SMTP2GO API key. It's kept out of the
-code on purpose so it isn't committed to your Git repo (anyone with the key can
-send email as you). Paste it into Vercel and redeploy:
+**No Vercel environment variables are required.** The SMTP2GO API key and your
+SmileOx intake address are both baked into `api/lead.js`, so the form works as
+soon as the project is deployed.
+
+> **Security:** because the key is in the code, keep your Git repository
+> **private**. The cleaner long-term setup is to move the key into a Vercel
+> environment variable and blank out `FALLBACK_API_KEY` in `api/lead.js` — see
+> "Optional: move the key to an env var" below. If the key is ever exposed,
+> rotate it in the SMTP2GO dashboard and update it in the file.
 
 | Variable | Required | Value / notes |
 |----------|----------|---------------|
-| `SMTP2GO_API_KEY` | ✅ | `api-023CC748598A4F5C8F0E2B92C697D037` |
-| `INTAKE_ADDRESS` | optional | Defaults to your SmileOx intake address (baked into `api/lead.js`). Only set this to override it. |
-| `SMTP_FROM` | optional | From header. Default: `Artarmon Dentists <no-reply@artarmondentists.com>`. **Must be a domain verified in SMTP2GO** or delivery will fail. |
+| `SMTP2GO_API_KEY` | optional | Overrides the baked-in key. Value: `api-023CC748598A4F5C8F0E2B92C697D037`. |
+| `INTAKE_ADDRESS` | optional | Overrides the baked-in SmileOx intake address. |
+| `SMTP_FROM` | optional | From header. Default: `Artarmon Dentists <no-reply@artarmondentists.com>`. **Must be a domain verified in SMTP2GO** or delivery is rejected. |
 | `ALLOW_ORIGIN` | optional | CORS origin. Default `*` (same-origin needs nothing). |
+
+#### Optional: move the key to an env var
+1. In Vercel: **Settings → Environment Variables**, add `SMTP2GO_API_KEY` with the value above (tick all environments).
+2. In `api/lead.js`, set `const FALLBACK_API_KEY = "";`
+3. **Redeploy** — env vars only apply to deployments created *after* they're added. (Adding a var without redeploying is the usual reason it "still doesn't work".)
 
 **How the form feeds SmileOx:** the form POSTs to `/api/lead`, which emails the
 submission — as a JSON body — to your SmileOx intake address
@@ -66,9 +76,9 @@ When a real lead is submitted, a new lead appears in your SmileOx pipeline with 
 
 ## Before going live — checklist
 
-- [ ] **`SMTP2GO_API_KEY`** set in Vercel and redeployed (otherwise the form returns a "Server not configured" error).
-- [ ] `SMTP_FROM` uses a domain **verified in SMTP2GO** (the default `artarmondentists.com` must be verified there, or delivery is rejected).
+- [ ] `SMTP_FROM` domain **verified in SMTP2GO** (the default `artarmondentists.com` must be verified there, or delivery is rejected — this is the most common reason a test lead never arrives).
 - [ ] Send a test enquiry and confirm a new lead appears in **SmileOx** with all fields correct.
+- [ ] Git repo kept **private** (the SMTP2GO key is in `api/lead.js`).
 - [ ] **Dr Radhika video** — the "Meet Dr Radhika" block currently shows `clinic.webp` with a "video coming soon" caption and acts as a Book button. When the video is ready, swap that block for an embed (same pattern as the Vimeo "Our story" section).
 - [ ] **Logo** — the top bar and footer now use your supplied logo (`logo-white.png`, recoloured white for the dark theme). The original is included as `logo.png`. Replace either file if you have a preferred lockup.
 - [ ] Confirm the **$50 consultation fee** wording and **payment-plans** framing match how you describe them to patients.
