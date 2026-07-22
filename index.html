@@ -320,6 +320,29 @@ body.lead-submitted #thanks{ display:flex; }
 .video-embed{ position:relative; width:100%; margin:2.2rem 0 0; aspect-ratio:16/9;
   border-radius:var(--r); overflow:hidden; border:1px solid rgba(255,255,255,.1); box-shadow:0 30px 80px rgba(0,0,0,.5); background:#000; }
 .video-embed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+/* ---------- Artarmon: click-to-play video facades + gallery ---------- */
+.vgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:2.2rem; }
+@media (max-width:880px){ .vgrid{ grid-template-columns:1fr; gap:1rem; max-width:520px; margin-left:auto; margin-right:auto; } }
+.vfacade{ position:relative; overflow:hidden; cursor:pointer; background:#000; border-radius:var(--r);
+  border:1px solid rgba(255,255,255,.1); box-shadow:0 24px 64px rgba(0,0,0,.5); }
+.vgrid .vfacade{ aspect-ratio:16/9; }
+.vfacade--portrait{ aspect-ratio:4/5; }
+.vfacade .vposter{ position:absolute; inset:0; background-size:cover; background-position:center;
+  background-color:#0d0d0f; background-image:linear-gradient(155deg, var(--glass) 0%, var(--glass-2) 100%);
+  filter:saturate(.9); transition:transform .5s var(--ease), filter .3s; }
+.vfacade:hover .vposter{ transform:scale(1.04); filter:saturate(.9) brightness(.88); }
+.vfacade:focus-visible{ outline:2px solid var(--aqua); outline-offset:3px; }
+.vfacade .vplay{ position:absolute; inset:0; margin:auto; width:74px; height:74px; border-radius:50%;
+  background:rgba(245,245,246,.95); display:grid; place-items:center; color:#141416; z-index:2;
+  box-shadow:0 12px 32px -8px rgba(0,0,0,.55); transition:transform .25s var(--ease); }
+.vfacade:hover .vplay{ transform:scale(1.08); }
+.vfacade .vplay svg{ width:29px; height:29px; margin-left:4px; }
+.vfacade .vcap{ position:absolute; left:0; right:0; bottom:0; z-index:2; padding:1.6rem 1.15rem .9rem;
+  color:#fff; font-size:.94rem; font-weight:600; line-height:1.32;
+  background:linear-gradient(to top, rgba(0,0,0,.74), rgba(0,0,0,0)); }
+.vfacade .vcap:empty{ display:none; }
+.vfacade iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; z-index:3; }
+.vfacade.playing .vposter, .vfacade.playing .vplay, .vfacade.playing .vcap{ opacity:0; pointer-events:none; }
 /* hero Google-reviews badge */
 .reviews{ display:flex; align-items:center; gap:.7rem; margin-top:1.9rem; flex-wrap:wrap; }
 .reviews .stars{ color:#f0c24c; font-size:1.35rem; letter-spacing:.12em; line-height:1; white-space:nowrap; }
@@ -678,10 +701,10 @@ body.lead-submitted #thanks{ display:flex; }
   <section class="panel" id="dentist">
     <div class="panel-inner">
       <div class="dentist-grid">
-        <div class="video-ph reveal d2 js-book" role="button" tabindex="0" aria-label="Meet Dr Radhika — book a consultation">
-          <img src="clinic.webp" alt="Artarmon Dentists caring for a young patient">
-          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
-          <span class="video-ph-cap">Meet Dr Radhika &amp; the team — video coming soon</span>
+        <div class="vfacade vfacade--portrait reveal d2" data-vimeo="1211651089" data-keep-poster role="button" tabindex="0" aria-label="Play video — meet Dr Radhika">
+          <div class="vposter" style="background-image:url('clinic.webp')"></div>
+          <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vcap" data-locked>Meet Dr Radhika — press play</span>
         </div>
         <div>
           <p class="eyebrow reveal">Meet your orthodontic dentist</p>
@@ -748,6 +771,35 @@ body.lead-submitted #thanks{ display:flex; }
         <iframe src="https://player.vimeo.com/video/1189722536?h=e22c046d7a&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" allowfullscreen title="Artarmon Dentists"></iframe>
       </div>
       <div class="hero-cta reveal d3" style="margin-top:1.8rem">
+        <button class="btn btn-primary btn-lg js-book" type="button">Book your child's consultation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7b. VIDEO SHOWCASE ================= -->
+  <section class="panel" id="videos">
+    <div class="panel-inner">
+      <p class="eyebrow reveal">Watch</p>
+      <h2 class="title reveal d1">See it for yourself</h2>
+      <p class="lede reveal d2">A closer look at life at Artarmon Dentists — the practice, the people and the gentle care behind every young smile.</p>
+      <div class="vgrid reveal d2">
+        <div class="vfacade" data-vimeo="1211651089" role="button" tabindex="0" aria-label="Play video">
+          <div class="vposter"></div>
+          <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vcap"></span>
+        </div>
+        <div class="vfacade" data-vimeo="1211652618" role="button" tabindex="0" aria-label="Play video">
+          <div class="vposter"></div>
+          <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vcap"></span>
+        </div>
+        <div class="vfacade" data-vimeo="1211654567" role="button" tabindex="0" aria-label="Play video">
+          <div class="vposter"></div>
+          <span class="vplay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vcap"></span>
+        </div>
+      </div>
+      <div class="hero-cta reveal d3" style="margin-top:1.9rem">
         <button class="btn btn-primary btn-lg js-book" type="button">Book your child's consultation</button>
       </div>
     </div>
@@ -1029,6 +1081,47 @@ function wireForm(form){
 buildForm(document.getElementById("heroFormMount"), "h");
 buildForm(document.getElementById("bookFormMount"), "b");
 
+/* ---------- Click-to-play Vimeo facades ---------- */
+(function initVideoFacades(){
+  document.querySelectorAll(".vfacade[data-vimeo]").forEach(node=>{
+    const id = node.getAttribute("data-vimeo");
+    const poster = node.querySelector(".vposter");
+    const cap = node.querySelector(".vcap");
+    const keepPoster = node.hasAttribute("data-keep-poster");
+
+    // Progressive enhancement: pull the real poster + title from Vimeo.
+    // If this is blocked (CORS) or fails, the branded poster / caption remain,
+    // and play-on-click still works regardless.
+    fetch("https://vimeo.com/api/oembed.json?width=1280&url=https://vimeo.com/" + id)
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if(!d) return;
+        if(poster && !keepPoster && d.thumbnail_url){
+          poster.style.backgroundImage = 'url("' + d.thumbnail_url.replace(/"/g,"") + '")';
+        }
+        if(cap && !cap.hasAttribute("data-locked") && d.title){
+          cap.textContent = d.title;
+        }
+      })
+      .catch(()=>{});
+
+    function play(){
+      if(node.classList.contains("playing")) return;
+      const f = document.createElement("iframe");
+      f.src = "https://player.vimeo.com/video/" + id + "?autoplay=1&title=0&byline=0&portrait=0&dnt=1";
+      f.setAttribute("allow","autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share");
+      f.setAttribute("allowfullscreen","");
+      f.setAttribute("title", (cap && cap.textContent.trim()) ? cap.textContent.trim() : "Artarmon Dentists video");
+      node.appendChild(f);
+      node.classList.add("playing");
+    }
+    node.addEventListener("click", play);
+    node.addEventListener("keydown", e=>{
+      if(e.key==="Enter" || e.key===" "){ e.preventDefault(); play(); }
+    });
+  });
+})();
+
 /* ---------- FAQ accordion ---------- */
 document.querySelectorAll(".faq-item").forEach(item=>{
   const btn = item.querySelector(".faq-q");
@@ -1046,7 +1139,7 @@ const panels = Array.from(deck.querySelectorAll(".panel"));
 const chapters = [
   {id:"hero",label:"Welcome"},{id:"problems",label:"Watch for"},{id:"stages",label:"3 Stages"},
   {id:"dentist",label:"Dr Radhika"},{id:"why",label:"Why early"},{id:"team",label:"Our team"},
-  {id:"watch",label:"Our story"},{id:"book",label:"Book"}
+  {id:"watch",label:"Our story"},{id:"videos",label:"Watch"},{id:"book",label:"Book"}
 ];
 const bookIndex = chapters.findIndex(c=>c.id==="book");
 let current = 0;
