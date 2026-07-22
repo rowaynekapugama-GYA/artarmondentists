@@ -19,7 +19,7 @@ The booking form captures the **parent's name + the child's name** (and optional
 | `logo-white.png` | White version of your logo, used in the (dark) header & footer |
 | `prob-*.webp` (×9) | Clinical photos for the "Problems to watch for" cards |
 | `platinum-invisalign.webp` | Platinum Invisalign Provider badge (Dr Radhika's profile) |
-| `invisalign.png` / `angel-aligner.png` | Aligner brand logos (rendered white on the dark theme) |
+| `angel-aligner.png` | Angel Aligner logo (rendered white on the dark theme) |
 | `package.json` | Project metadata for Vercel |
 | `SETUP.md` | This file |
 
@@ -31,15 +31,28 @@ The booking form captures the **parent's name + the child's name** (and optional
 2. In Vercel: **Add New → Project → Import** the repo. No build step or framework preset needed — it deploys as static + the `/api` function automatically.
 3. Add the environment variables below, then **redeploy** so they take effect.
 
-### Required environment variables
+### Environment variables
 `Project → Settings → Environment Variables`
 
-| Variable | Required | Notes |
-|----------|----------|-------|
-| `SMTP2GO_API_KEY` | ✅ | Your SMTP2GO API key (e.g. `api-XXXXXXXX`). |
-| `INTAKE_ADDRESS` | ✅ | The inbox leads are emailed to. **The form will not deliver until this is set.** |
-| `SMTP_FROM` | optional | From header. Default: `Artarmon Dentists <no-reply@artarmondentists.com>`. Use a domain you've verified in SMTP2GO. |
+Only **one** variable is required — the SMTP2GO API key. It's kept out of the
+code on purpose so it isn't committed to your Git repo (anyone with the key can
+send email as you). Paste it into Vercel and redeploy:
+
+| Variable | Required | Value / notes |
+|----------|----------|---------------|
+| `SMTP2GO_API_KEY` | ✅ | `api-023CC748598A4F5C8F0E2B92C697D037` |
+| `INTAKE_ADDRESS` | optional | Defaults to your SmileOx intake address (baked into `api/lead.js`). Only set this to override it. |
+| `SMTP_FROM` | optional | From header. Default: `Artarmon Dentists <no-reply@artarmondentists.com>`. **Must be a domain verified in SMTP2GO** or delivery will fail. |
 | `ALLOW_ORIGIN` | optional | CORS origin. Default `*` (same-origin needs nothing). |
+
+**How the form feeds SmileOx:** the form POSTs to `/api/lead`, which emails the
+submission — as a JSON body — to your SmileOx intake address
+(`artarmon-kids-landing+…@intake.smileox.com.au`). SmileOx reads that JSON and
+creates/updates a lead in your pipeline. The relay sends via the SMTP2GO HTTPS
+API, and SMTP2GO delivers on to SmileOx over TLS. Fields sent: `firstName`,
+`lastName`, `email`, `phoneNumber`, plus `childName`, `childAge`, `concerns` and
+a `source` tag (stored as lead detail). Leads are de-duplicated by email + phone,
+so multi-step or repeat submissions update the same lead rather than duplicating it.
 
 ### Verify the function is live
 Open `https://YOURSITE/api/lead` in a browser (a GET):
@@ -47,15 +60,15 @@ Open `https://YOURSITE/api/lead` in a browser (a GET):
 - `{"ok":false,"error":"Method not allowed"}` → **function is live** ✅
 - `404` → it isn't deployed inside an `/api` folder ❌
 
-When a real lead is submitted you'll get an email with the parent, child (and age), email, phone, and any concerns ticked. The visitor's email is set as **Reply-To** so you can reply straight from your inbox.
+When a real lead is submitted, a new lead appears in your SmileOx pipeline with the parent, child (and age), email, phone and any concerns ticked. The visitor's email is set as **Reply-To** on the underlying message.
 
 ---
 
 ## Before going live — checklist
 
-- [ ] **`INTAKE_ADDRESS`** set in Vercel (otherwise the form returns a "Server not configured" error).
-- [ ] **`SMTP2GO_API_KEY`** set, and `SMTP_FROM` uses a domain verified in SMTP2GO.
-- [ ] Send a test enquiry and confirm the email arrives.
+- [ ] **`SMTP2GO_API_KEY`** set in Vercel and redeployed (otherwise the form returns a "Server not configured" error).
+- [ ] `SMTP_FROM` uses a domain **verified in SMTP2GO** (the default `artarmondentists.com` must be verified there, or delivery is rejected).
+- [ ] Send a test enquiry and confirm a new lead appears in **SmileOx** with all fields correct.
 - [ ] **Dr Radhika video** — the "Meet Dr Radhika" block currently shows `clinic.webp` with a "video coming soon" caption and acts as a Book button. When the video is ready, swap that block for an embed (same pattern as the Vimeo "Our story" section).
 - [ ] **Logo** — the top bar and footer now use your supplied logo (`logo-white.png`, recoloured white for the dark theme). The original is included as `logo.png`. Replace either file if you have a preferred lockup.
 - [ ] Confirm the **$50 consultation fee** wording and **payment-plans** framing match how you describe them to patients.

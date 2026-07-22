@@ -1,20 +1,30 @@
 // api/lead.js — Artarmon Dentists lead relay (Vercel serverless function)
 // ---------------------------------------------------------------------------
-// Receives the booking-form POST from index.html and emails it to your practice
-// intake inbox via the SMTP2GO HTTP API. (A browser cannot send SMTP email
-// directly, so this small same-origin relay does it server-side.)
+// Receives the booking-form POST from index.html and forwards it to SmileOx.
 //
-// SET THESE as Environment Variables in Vercel, then redeploy:
-//   Project → Settings → Environment Variables
+// SmileOx creates a CRM lead from any email sent to its unique intake address,
+// where the *plain-text email body* is the JSON payload. A browser can't send
+// email directly, so this small same-origin relay sends it server-side through
+// the SMTP2GO HTTP API (HTTPS, so the API call is always over TLS; SMTP2GO then
+// delivers on to intake.smileox.com.au using TLS).
+//
+// SET THIS as an Environment Variable in Vercel, then redeploy:
+//   Project -> Settings -> Environment Variables
 //
 //   SMTP2GO_API_KEY   (required)  Your SMTP2GO API key, e.g. api-XXXXXXXXXXXX
-//   INTAKE_ADDRESS    (required)  Where leads are emailed — your practice intake inbox
-//   SMTP_FROM         (optional)  From header. Default: Artarmon Dentists <no-reply@artarmondentists.com>
-//   ALLOW_ORIGIN      (optional)  CORS origin. Default: "*" (same-origin needs nothing)
+//
+// Optional overrides (sensible defaults are baked in):
+//   INTAKE_ADDRESS    SmileOx intake address (defaults to the Artarmon kids' intake)
+//   SMTP_FROM         From header. Default: Artarmon Dentists <no-reply@artarmondentists.com>
+//                     (use a domain verified in SMTP2GO)
+//   ALLOW_ORIGIN      CORS origin. Default: "*" (same-origin needs nothing)
 //
 // Quick test once deployed:  GET https://YOURSITE/api/lead  ->  {"ok":false,"error":"Method not allowed"}
 // (That JSON means the function is live. A 404 means it isn't deployed in an /api folder.)
 // ---------------------------------------------------------------------------
+
+// SmileOx intake address for this landing page (safe default; override via env if it ever changes)
+const DEFAULT_INTAKE = "artarmon-kids-landing+695439a7-a3c7-4170-b3d4-8d6b47919a4c@intake.smileox.com.au";
 
 module.exports = async (req, res) => {
   const ALLOW_ORIGIN = process.env.ALLOW_ORIGIN || "*";
@@ -35,44 +45,33 @@ module.exports = async (req, res) => {
 
   // ---- required configuration ----
   const API_KEY = process.env.SMTP2GO_API_KEY;
-  const TO = process.env.INTAKE_ADDRESS;
+  const TO = process.env.INTAKE_ADDRESS || DEFAULT_INTAKE;
   const FROM = process.env.SMTP_FROM || "Artarmon Dentists <no-reply@artarmondentists.com>";
-  const missing = [];
-  if (!API_KEY) missing.push("SMTP2GO_API_KEY");
-  if (!TO) missing.push("INTAKE_ADDRESS");
-  if (missing.length) { res.status(500).json({ ok: false, error: "Server not configured", missing: missing }); return; }
+  if (!API_KEY) { res.status(500).json({ ok: false, error: "Server not configured", missing: ["SMTP2GO_API_KEY"] }); return; }
 
-  // ---- assemble the lead ----
+  // ---- build the SmileOx JSON payload ----
+  // firstName / lastName / email / phoneNumber are SmileOx's standard fields
+  // (the parent/guardian is the lead). Everything else is stored as lead detail.
   const v = (k) => (body[k] == null ? "" : String(body[k]).trim());
-  const firstName = v("firstName"), lastName = v("lastName");
-  const parentName = (firstName + " " + lastName).trim() || "(no name given)";
-  const childName = v("childName") || "(not given)";
-  const childAge = v("childAge");
-  const childLine = childAge ? (childName + " (age " + childAge + ")") : childName;
   const email = v("email");
+  const phoneNumber = v("phoneNumber");
 
-  const textBody = [
-    "New children's orthodontics enquiry from the Artarmon Dentists landing page",
-    "--------------------------------------------------------------------------",
-    "Parent / guardian: " + parentName,
-    "Child:             " + childLine,
-    "Email:             " + email,
-    "Phone:             " + v("phoneNumber"),
-    "Concerns:          " + (v("concerns") || "—"),
-    "",
-    "Submitted:         " + new Date().toISOString()
-  ].join("\n");
+  const payload = {
+    firstName: v("firstName"),
+    lastName: v("lastName"),
+    email: email,
+    phoneNumber: phoneNumber,
+    childName: v("childName"),
+    childAge: v("childAge"),
+    concerns: v("concerns"),
+    source: "Artarmon kids' orthodontics landing page"
+  };
+  // drop empty fields so the lead record stays clean
+  Object.keys(payload).forEach(function (k) { if (payload[k] === "") delete payload[k]; });
 
-  const htmlBody =
-    "<h2 style=\"font-family:Arial,sans-serif\">New children's orthodontics enquiry</h2>" +
-    "<table style=\"font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse\">" +
-    row("Parent / guardian", parentName) + row("Child", childLine) +
-    row("Email", email) + row("Phone", v("phoneNumber")) +
-    row("Concerns", v("concerns") || "—") +
-    "</table>" +
-    "<p style=\"color:#888;font-family:Arial,sans-serif;font-size:12px\">Submitted " + new Date().toISOString() + "</p>";
+  const jsonBody = JSON.stringify(payload);
 
-  // ---- send via SMTP2GO HTTP API ----
+  // ---- send via SMTP2GO HTTP API (body = the JSON SmileOx parses) ----
   try {
     const r = await fetch("https://api.smtp2go.com/v3/email/send", {
       method: "POST",
@@ -81,14 +80,13 @@ module.exports = async (req, res) => {
         api_key: API_KEY,
         to: [TO],
         sender: FROM,
-        subject: "New kids' ortho enquiry — " + parentName + " (" + childName + ")",
-        text_body: textBody,
-        html_body: htmlBody,
+        subject: "Website form submission - Artarmon kids' orthodontics",
+        text_body: jsonBody,
         custom_headers: email ? [{ header: "Reply-To", value: email }] : []
       })
     });
 
-    const out = await r.json().catch(() => ({}));
+    const out = await r.json().catch(function () { return {}; });
     const data = (out && out.data) ? out.data : {};
     const sent = Number(data.succeeded || 0);
     const failed = Number(data.failed || 0);
@@ -105,11 +103,3 @@ module.exports = async (req, res) => {
     res.status(502).json({ ok: false, error: "Email send failed", detail: String(e && e.message ? e.message : e) });
   }
 };
-
-function row(label, value) {
-  return "<tr><td style=\"padding:4px 14px 4px 0;color:#555;font-weight:bold;vertical-align:top\">" +
-    esc(label) + "</td><td style=\"padding:4px 0\">" + esc(value) + "</td></tr>";
-}
-function esc(s) {
-  return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-}
